@@ -16,8 +16,8 @@ export const revalidate = 60; // ISR: update list every 60s
 
 export async function generateMetadata(): Promise<Metadata> {
     return metaData({
-        title: 'Blog - Onyx Dental Center',
-        description: "Written by our dental experts, our blog has the latest insights and tips on dental care, treatments, and innovations in dentistry. Booking now.",
+        title: 'Dental Blog & Expert Insights - Onyx Dental Center',
+        description: "Discover expert dental care tips, treatment insights, and oral health innovations from our experienced dentists.",
         images: [{ url: '/assets/images/home-section4-3.webp' }],
         path: '/blogs',
     });
@@ -36,7 +36,10 @@ export default async function BlogListPage() {
                 <div className='w-full md:max-w-5xl xl:max-w-6xl'>
                     <div className='mb-24'>
                         <div className='flex flex-col md:flex-row md:items-center justify-between mb-6 md:mb-10'>
-                            <h2 className="leading-[130%] text-3xl md:text-5xl font-eb-garamond font-bold text-heading-1">Dental Article</h2>
+                            <div>
+                                <h1 className="leading-[130%] text-3xl md:text-5xl font-eb-garamond font-bold text-heading-1">Onyx Dental Blog</h1>
+                                <p className="text-gray-600 mt-2">Expert insights on dental care and innovations.</p>
+                            </div>
 
                             {/* Language Switcher */}
                             <div className='flex gap-2 mt-4 md:mt-0'>
@@ -68,7 +71,7 @@ export default async function BlogListPage() {
                                     />
                                     <div className='w-full justify-between p-4'>
                                         <div className='mb-14'>
-                                            <h4 className='leading-[130%] text-2xl font-semibold text-custom-text-color mb-2'>{e.title}</h4>
+                                            <h2 className='leading-[130%] text-2xl font-semibold text-custom-text-color mb-2'>{e.title}</h2>
                                             <p className='leading-[150%] text-[#7C7C7C]'>{e.excerpt}</p>
                                         </div>
 

@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
     return metaData({
         title: `${doctor.name} | Onyx Dental Center`,
-        description: `Dentist near Jakarta, Bogor, Depok, Tangerang, and Bekasi. With speciality ${doctor.speciality}`,
+        description: `Meet ${doctor.name}, experienced ${doctor.speciality.toLowerCase()} with ${doctor.year_experience} years of experience. Expert in ${doctor.speciality}. Book your appointment at Onyx Dental Center - serving Jakarta, Tangerang, and Karawaci areas.`,
         images: [{ url: `/assets/images/doctor/doctor-detail-${index + 1}.webp` }],
         path: `/ourteam/${slug}`,
     });

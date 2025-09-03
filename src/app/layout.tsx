@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { CustomFonts } from "./fonts/custom-fonts";
 import { getSettings } from "@/lib/api";
 import Script from "next/script";
+import PixelProviders from "@/lib/utils/pixel";
+import { Suspense } from "react";
 // import { PageWrapper } from "@/components";
 
 const ebGaramond = EB_Garamond({
@@ -21,6 +23,7 @@ export default async function RootLayout({
 }>) {
 
   const settings = await getSettings()
+  const pixelId = 3800209303610125;
 
   return (
     <html lang="en">
@@ -49,6 +52,32 @@ export default async function RootLayout({
             })(window,document,'script','dataLayer','GTM-M685TJBG');
           `}
         </Script>
+
+        {/* Facebook Meta Pixel */}
+        <Script
+          id="fb-pixel-base"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '${pixelId}');
+fbq('track', 'PageView');
+                `,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
       </head>
       <body
         className={`${ebGaramond.variable} ${CustomFonts.variable} antialiased bg-white font-helvetica`}
@@ -64,7 +93,11 @@ export default async function RootLayout({
         </noscript>
         <Navbar settings={settings.data} />
         <main className="min-h-screen">
-          {children}
+          <Suspense fallback={null}>
+            <PixelProviders>
+              {children}
+            </PixelProviders>
+          </Suspense>
         </main>
         <Footer settings={settings.data} />
       </body>

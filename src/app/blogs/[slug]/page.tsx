@@ -20,16 +20,6 @@ import BlogContent from '@/components/BlogContent';
 export const revalidate = 60; // ISR regeneration time (60 seconds)
 export const dynamicParams = true; // Allow dynamic params
 
-// Generate static paths for blogs (optional)
-// Remove or comment out generateStaticParams function
-// export async function generateStaticParams() {
-//     const blogs = await getBlogs();
-//
-//     if (!blogs.data.length) return []
-//
-//     return blogs.data?.filter(f => f.status === 'published').map((blog) => ({ slug: blog.slug }));
-// }
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const slug = (await params).slug
     const blog = await getBlogsBySlug(slug);
@@ -48,7 +38,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
     // Ensure params is properly destructured and not treated as a Promise
     const { slug } = await params;
-    const blog = await getBlogsBySlug(slug);
+
+    let blog;
+    try {
+        blog = await getBlogsBySlug(slug);
+    } catch (error: any) {
+        if (error.message === 'NOT_FOUND') {
+            return notFound();
+        }
+        throw error; // Re-throw other errors
+    }
+
     // console.log('BLOG: ', blog);
     const language = blog.data.language ?? 'id-id';
     const author = blog.data.author.name ?? 'Onyx Editorial Team';

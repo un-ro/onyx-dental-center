@@ -66,7 +66,7 @@ export async function GET() {
 
       const blogUrls =
         blogs?.map((blog: Post) => ({
-          loc: `${baseUrl}/blogs/${blog.slug}`,
+          loc: `${baseUrl}blogs/${blog.slug}`,
           changefreq: "weekly",
           priority: 0.8,
           lastmod: lastMod,

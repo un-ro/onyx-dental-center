@@ -16,8 +16,8 @@ export const revalidate = 60; // ISR: update list every 60s
 
 export async function generateMetadata(): Promise<Metadata> {
     return metaData({
-        title: 'Blog - Onyx Dental Center',
-        description: "Written by our dental experts, our blog has the latest insights and tips on dental care, treatments, and innovations in dentistry. Booking now.",
+        title: 'Expert Dental Insights & Tips - Onyx Dental Blog',
+        description: "Discover the latest in dental care, innovative treatments, and oral health tips from our expert dentists. Stay informed, stay healthy.",
         images: [{ url: '/assets/images/home-section4-3.webp' }],
         path: '/blogs/en',
     });
@@ -36,19 +36,25 @@ export default async function BlogListPage() {
                 <div className='w-full md:max-w-5xl xl:max-w-6xl'>
                     <div className='mb-24'>
                         <div className='flex flex-col md:flex-row md:items-center justify-between mb-6 md:mb-10'>
-                            <h3 className="leading-[130%] text-3xl md:text-5xl font-eb-garamond font-bold text-heading-1">Dental Article</h3>
-                            
+                            <div>
+                                <h1 className="leading-[130%] text-3xl md:text-5xl font-eb-garamond font-bold text-heading-1">Onyx Dental Blog</h1>
+                                <p className="text-gray-600 mt-2">Expert insights on dental care and innovations.</p>
+                            </div>
+
                             {/* Language Switcher */}
                             <div className='flex gap-2 mt-4 md:mt-0'>
-                                <Link 
-                                    href="/blogs/id" 
+                                <Link
+                                    href="/blogs/id"
                                     className='px-4 py-2 rounded-lg font-medium transition-colors bg-white text-custom-text-color border border-gray-300 hover:bg-gray-50'
                                 >
                                     Bahasa Indonesia
                                 </Link>
-                                <div className='px-4 py-2 rounded-lg font-medium bg-custom-secondary text-white'>
+                                <Link
+                                    href="/blogs/en"
+                                    className='px-4 py-2 rounded-lg font-medium transition-colors bg-white text-custom-text-color border border-gray-300 hover:bg-gray-50'
+                                >
                                     English
-                                </div>
+                                </Link>
                             </div>
                         </div>
 
@@ -64,7 +70,7 @@ export default async function BlogListPage() {
                                     />
                                     <div className='w-full h-full flex flex-col justify-between p-4'>
                                         <div>
-                                            <h4 className='leading-[130%] text-2xl font-semibold text-custom-text-color mb-2'>{e.title}</h4>
+                                            <h2 className='leading-[130%] text-2xl font-semibold text-custom-text-color mb-2'>{e.title}</h2>
                                             <p className='leading-[150%] text-[#7C7C7C]'>{e.excerpt}</p>
                                         </div>
 

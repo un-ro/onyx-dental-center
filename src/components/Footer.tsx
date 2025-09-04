@@ -28,7 +28,7 @@ export default async function Footer({ settings }: { settings: Setting }) {
         }
     ]
 
-    console.log("FOOTER ", settings);
+    // console.log("FOOTER ", settings);
 
 
     return (

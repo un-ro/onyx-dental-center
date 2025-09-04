@@ -42,8 +42,8 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
     let blog;
     try {
         blog = await getBlogsBySlug(slug);
-    } catch (error: any) {
-        if (error.message === 'NOT_FOUND') {
+    } catch (error: unknown) {
+        if (error instanceof Error && error.message === 'NOT_FOUND') {
             return notFound();
         }
         throw error; // Re-throw other errors

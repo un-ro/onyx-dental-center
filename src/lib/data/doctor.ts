@@ -64,7 +64,7 @@ export const doctors = [
   },
   {
     name: "drg. Rio Jonas, M.Kes, Sert. Ort",
-    excrept: "Passionate Certified Orthodontist",
+    excrept: "Orthodontic Certified Dentist",
     // description: "Passionate Certified Orthodontist",
     slug: "drg-rio-jonas-m-kes-sert-ort",
     statistic: [
@@ -74,13 +74,14 @@ export const doctors = [
       },
     ],
     year_experience: 22,
-    speciality: "Digital dentistry, smile makeovers, and veneers & crowns",
+    speciality:
+      "Orthodontic treatments (fixed appliance & complex cases), clear aligner",
     education: [
       "General dentist - Universitas Trisakti (2003)",
-      "Certified Orthodontist - Universitas Trisakti (2008)",
+      "Orthodontic certified dentist - Universitas Trisakti (2008)",
     ],
     description:
-      "With more than 27 years of expertise, drg. Rio Jonas is a certified orthodontist recognized for his extensive knowledge in handling complex orthodontic cases. Upon obtaining his certification in orthodontics from Universitas Trisakti in 2008, he has effectively carried out over 500 orthodontic treatments utilizing fixed appliances and various advanced methods. His composed manner and meticulous method establish him as a reliable expert in tooth alignment and facial aesthetics.",
+      "With more than 22 years of expertise, drg. Rio Jonas is a certified orthodontist recognized for his extensive knowledge in handling complex orthodontic cases. Upon obtaining his certification in orthodontics from Universitas Trisakti in 2008, he has effectively carried out over 500 orthodontic treatments utilizing fixed appliances and various advanced methods. His composed manner and meticulous method establish him as a reliable expert in tooth alignment and facial aesthetics.",
     schedule: [
       {
         day: "Monday",
@@ -249,7 +250,11 @@ export const doctors = [
         time: "13.00 - 20.00",
       },
     ],
-    experience: [""],
+    experience: [
+      "Mahidol International Endodontic Symposium (MIES) - Innovation in Endodontic Retreatment, 2024",
+      "SINI VII - National Scientific Meeting of Indonesian Conservative Dentistry Association, 2024",
+      "Masterclass in Veneering - The Dental Academy Malaysia, 2023",
+    ],
   },
   {
     name: "drg. Florencia Stephanie",
@@ -315,10 +320,10 @@ export const doctors = [
         day: "Thursday",
         time: "09.00 - 15.00",
       },
-      {
-        day: "Friday",
-        time: "09.00 - 15.00",
-      },
+      // {
+      //   day: "Friday",
+      //   time: "09.00 - 15.00",
+      // },
       {
         day: "Sunday",
         time: "12.00 - 19.00",
@@ -360,7 +365,7 @@ export const doctors = [
       },
       {
         day: "Sunday",
-        time: "10.00 - 18.00",
+        time: "10.00 - 20.00",
       },
     ],
     experience: [
@@ -438,7 +443,7 @@ export const doctors = [
       },
       {
         day: "Thursday",
-        time: "15.00 - 20.00",
+        time: "09.00 - 15.00",
       },
       {
         day: "Saturday",

@@ -7,9 +7,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export function generateStaticParams() {
-  return treatments.map((treatment) => ({
-    slug: treatment.slug,
-  }));
+    return treatments.map((treatment) => ({
+        slug: treatment.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     const index = treatments.findIndex((treatment) => treatment.slug === slug);
-  
+
     return metaData({
         title: `${treatment.title} Treatment | Onyx Dental Center`,
         description: `Premium Aesthetic Dental Treatment ${treatment.title} near Jakarta, Bogor, Depok, Tangerang, and Bekasi.`,
@@ -112,6 +112,10 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
                             <p className="mt-2 text-custom-text-color-2">{item.description}</p>
                         </div>
                     ))}
+
+                    {treatment?.result && treatment?.result.length === 2 && (
+                        <div className="md:w-[31%]"></div>
+                    )}
                 </div>
             </div>
         </section> : null}

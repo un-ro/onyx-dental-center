@@ -85,7 +85,7 @@ export const treatments = [
     },
   },
   {
-    title: "Orthodontic and Clear Aligner",
+    title: "Orthodontic and Invisalign",
     excrept:
       "Efficient solutions to align teeth, correct bites, and enhance smile harmony comfortably.",
     slug: "orthodontic-and-clear-aligner",
@@ -318,7 +318,16 @@ export const treatments = [
         list: "3–6 months including healing",
       },
     ],
-    result: [],
+    result: [
+      {
+        image: "/assets/images/treatment/treatment-result-1.webp",
+        description: "From Missing Teeth to Endless Possibilities.",
+      },
+      {
+        image: "/assets/images/treatment/treatment-result-2.webp",
+        description: "Dental Implants: Comfort That Feels Like Real Teeth.",
+      },
+    ],
     cta: {
       title: "A long lasting replacement",
       subheading:

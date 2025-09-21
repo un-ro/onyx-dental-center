@@ -72,6 +72,13 @@ export default async function ProvenResult() {
         "Direct Restoration, Instant Smile Fix",
         "Decayed, Repaired, Renewed"
       ]
+    },
+    {
+      title: "Dental Implant",
+      description: [
+        "From Missing Teeth to Endless Possibilities.",
+        "Dental Implants: Comfort That Feels Like Real Teeth."
+      ]
     }
   ]
 
@@ -124,6 +131,10 @@ export default async function ProvenResult() {
                     </div>
                   );
                 })}
+
+                {item.description.length === 2 && (
+                  <div className="md:w-[31%]"></div>
+                )}
               </div>
             </div>
           ))}

@@ -17,22 +17,26 @@ const BASE_URL = "https://api.onyxdentalcenter.id/api/" + "public";
 const DEFAULT_REVALIDATE = 43200; // 12 hours
 const DEFAULT_REVALIDATE_BLOGS = 3600; // 1 hours
 
-export async function getBlogs(language: string | null = null): Promise<BaseResponse<Post>> {
-  const url = language ? `${BASE_URL}/posts?language=${language}` : `${BASE_URL}/posts`;
+export async function getBlogs(
+  language: string | null = null,
+): Promise<BaseResponse<Post>> {
+  const url = language
+    ? `${BASE_URL}/posts?language=${language}`
+    : `${BASE_URL}/posts`;
 
   const res = await fetcher<BaseResponse<Post>>(url, {
-    next: { 
+    next: {
       revalidate: DEFAULT_REVALIDATE_BLOGS,
-      tags: [`blogs-${language || 'all'}`] // Unique cache tag per language
-    }
+      tags: [`blogs-${language || "all"}`], // Unique cache tag per language
+    },
   });
 
   return res;
 }
 
 // Remove getBlogsId and getBlogsEn, replace with:
-export const getBlogsId = () => getBlogs('id-id');
-export const getBlogsEn = () => getBlogs('en-id');
+export const getBlogsId = () => getBlogs("id-id");
+export const getBlogsEn = () => getBlogs("en-id");
 
 export async function getBlogsForSitemap(): Promise<BaseResponse<Post>> {
   try {
@@ -63,7 +67,7 @@ export async function getSettings(): Promise<BaseResponseDetail<Setting>> {
         // headers: {
         //   Authorization: `Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..Goq3DwXNNOPqtez1.drTTp0wfOa2qI12MNrTRUXFhQhFHEKV2KaplMOj1cGyC5oNnpYXs68ORc5_VEQSOVNNBydHrpRYvuTExqIV4zD2D_7PJTxcAjGkP9EpdN_jpBlx9vn4nVH1f-SivP65Ypv0xYeI-RLgh5APzp2RGxsoLUpvUD_p_Au2eHmIKTGeu2JC1PZ-RCfYJainNWO-VmDGni9MMJE9g4ut5SjJBhqRUwxzyqY0h83hNlsHfWrEw5ECk.hB7Eza35UwgtbLaRm0LI1g`,
         // },
-      }
+      },
     );
 
     // console.log("CEK: ", {
@@ -84,8 +88,8 @@ export async function getSettings(): Promise<BaseResponseDetail<Setting>> {
         ...res.data,
         link_whatsapp: whatsappLink(
           res.data?.socials?.whatsapp || "6281286632240",
-          res.data?.socials?.whatsappMessage ||
-            "Hi ONYX, saya ingin konsultasi untuk perawatan gigi saya ya"
+          // res.data?.socials?.whatsappMessage || "Hi, ONYX...",
+          "Hi, ONYX...",
         ),
       },
     };
@@ -101,7 +105,7 @@ export async function getSettings(): Promise<BaseResponseDetail<Setting>> {
 }
 
 export async function getBlogsBySlug(
-  slug: string
+  slug: string,
 ): Promise<BaseResponseDetail<Post>> {
   const res = await fetcher<BaseResponseDetail<Post>>(
     `${BASE_URL}/posts/${slug}`,
@@ -111,7 +115,7 @@ export async function getBlogsBySlug(
       // headers: {
       //   Authorization: `Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..Goq3DwXNNOPqtez1.drTTp0wfOa2qI12MNrTRUXFhQhFHEKV2KaplMOj1cGyC5oNnpYXs68ORc5_VEQSOVNNBydHrpRYvuTExqIV4zD2D_7PJTxcAjGkP9EpdN_jpBlx9vn4nVH1f-SivP65Ypv0xYeI-RLgh5APzp2RGxsoLUpvUD_p_Au2eHmIKTGeu2JC1PZ-RCfYJainNWO-VmDGni9MMJE9g4ut5SjJBhqRUwxzyqY0h83hNlsHfWrEw5ECk.hB7Eza35UwgtbLaRm0LI1g`,
       // },
-    }
+    },
   );
 
   return res;

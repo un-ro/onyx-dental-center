@@ -89,6 +89,7 @@ export async function getSettings(): Promise<BaseResponseDetail<Setting>> {
         link_whatsapp: whatsappLink(
           res.data?.socials?.whatsapp || "6281286632240",
           // res.data?.socials?.whatsappMessage || "Hi, ONYX...",
+          // test
           "Hi, ONYX...",
         ),
       },

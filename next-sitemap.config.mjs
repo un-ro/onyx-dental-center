@@ -1,6 +1,6 @@
 // next-sitemap.config.mjs
 export default {
-    siteUrl: 'https://bmwdentalclinic.com',
+    siteUrl: 'https://onyxdentalcenter.id',
     generateRobotsTxt: true,
     additionalPaths: async () => {
         // Helper function for retry logic
@@ -34,7 +34,7 @@ export default {
         try {
             console.log('Fetching blog posts for sitemap generation...');
             
-            const response = await fetchWithRetry('https://api.bmwdentalclinic.com/api/public/posts?status=published', {
+            const response = await fetchWithRetry('https://api.onydentalcenter.id/api/public/posts?status=published', {
                 headers: {
                     'Content-Type': 'application/json',
                     'User-Agent': 'next-sitemap/1.0',

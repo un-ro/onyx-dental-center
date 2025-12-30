@@ -33,7 +33,7 @@ export function metaData({
         alt: description,
         type: "image/webp",
       })),
-      siteName: "BMW Dental Clinic – Klinik Gigi Terbaik di Medan",
+      siteName: "Onyx Dental Center – Klinik Gigi Terdekat di Karawaci, Tangerang",
     },
     alternates: {
       languages: {

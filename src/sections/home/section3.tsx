@@ -36,7 +36,8 @@ export default async function Section3() {
     return (
         <section className="flex justify-center p-7 md:py-20">
             <div className="w-full flex flex-col md:max-w-5xl xl:max-w-6xl">
-                <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Smile Transformations</h1>
+                {/* <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Smile Transformations</h1> */}
+                <h2 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">Smile Transformations — Veneer, Invisalign & Smile Makeover Jakarta</h2>
                 <div className="flex flex-wrap flex-col md:flex-row justify-between gap-6 md:gap-8 mb-6 md:mb-12">
                     {list.map((item, index) => (
                         <div className="md:w-[31%]" key={index}>

@@ -9,7 +9,8 @@ export default async function Section4() {
     return (
         <section className="flex flex-col items-center pt-7 md:py-20 ">
             <div className="w-full flex flex-col md:max-w-5xl xl:max-w-6xl px-7 md:px-0">
-                <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Onyx Experience</h1>
+                {/* <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Onyx Experience</h1> */}
+                <h2 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Onyx Experience — Fasilitas Klinik Gigi Terbaik di Jakarta</h2>
             </div>
             <div className="w-full pb-7 bg-custom-black md:bg-custom-primary">
                 <CustomCarousel />

@@ -29,6 +29,90 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": ["Dentist", "LocalBusiness"],
+                  "@id": "https://onyxdentalcenter.id/#business",
+                  "name": "Onyx Dental Center",
+                  "description": "Jakarta's premier smile studio specializing in veneers, Invisalign, and smile makeovers.",
+                  "url": "https://onyxdentalcenter.id/",
+                  "logo": "https://onyxdentalcenter.id/logo.png",
+                  "image": "https://onyxdentalcenter.id/assets/images/home-section1.webp",
+                  "telephone": "+62-812-8663-2240",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Ruko Asia Millenium, Jl. Taman Permata No.65 Blok C-1",
+                    "addressLocality": "Binong, Kec. Curug",
+                    "addressRegion": "Banten",
+                    "postalCode": "15811",
+                    "addressCountry": "ID"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -6.238,
+                    "longitude": 106.660
+                  },
+                  "openingHoursSpecification": [
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                      "opens": "09:00",
+                      "closes": "20:00"
+                    },
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      "dayOfWeek": "Saturday",
+                      "opens": "09:00",
+                      "closes": "20:00"
+                    },
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      "dayOfWeek": "Sunday",
+                      "opens": "10:00",
+                      "closes": "20:00"
+                    }
+                  ],
+                  "priceRange": "Rp 1.000.000 - Rp 20.000.000",
+                  "currenciesAccepted": "IDR",
+                  "paymentAccepted": "Cash, Credit Card, Transfer",
+                  "medicalSpecialty": "Dentistry",
+                  "availableService": [
+                    { "@type": "MedicalProcedure", "name": "Veneer Gigi" },
+                    { "@type": "MedicalProcedure", "name": "Invisalign" },
+                    { "@type": "MedicalProcedure", "name": "Smile Makeover" },
+                    { "@type": "MedicalProcedure", "name": "Teeth Whitening" },
+                    { "@type": "MedicalProcedure", "name": "Dental Implant" }
+                  ],
+                  "sameAs": [
+                    "https://www.instagram.com/onyxdentalcenter/",
+                    "https://www.tiktok.com/@onyxdentalcenter",
+                    "https://www.youtube.com/@onyxdentalcenter",
+                    "https://www.facebook.com/onyxdentalcenter/"
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://onyxdentalcenter.id/#website",
+                  "url": "https://onyxdentalcenter.id/",
+                  "name": "Onyx Dental Center",
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://onyxdentalcenter.id/blogs?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                  }
+                }
+              ]
+            })
+          }}
+        />
         {/* Google Analytics Script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5P470BH13Q"

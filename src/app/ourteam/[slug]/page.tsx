@@ -45,6 +45,31 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
     const doctor = doctors.find((d) => d.slug === slug);
     const index = doctors.findIndex((d) => d.slug === slug);
     return (<PageWrapper className="w-full min-h-screen flex justify-center bg-custom-primary">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Physician",
+              "name": doctor?.name ?? '',
+              "jobTitle": "Dentist",
+              "description": doctor?.description ?? '',
+              "worksFor": { "@id": "https://onyxdentalcenter.id/#business" },
+              "url": `https://onyxdentalcenter.id/ourteam/${slug}`,
+              "image": `https://onyxdentalcenter.id/assets/images/doctor/doctor-detail-${index + 1}.webp`,
+              "knowsAbout": doctor?.speciality ? [doctor.speciality] : [],
+              "alumniOf": doctor?.education?.map((edu: string) => ({
+                "@type": "EducationalOrganization",
+                "name": edu
+              })) ?? [],
+              "hasCredential": {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "drg. (Dokter Gigi)"
+              }
+            })
+          }}
+        />
         <section className="w-full md:py-20 md:max-w-5xl xl:max-w-6xl text-custom-text-color">
             <h1 className="p-7 md:p-0 text-5xl font-eb-garamond font-semibold leading-[150%] mb-4">{doctor?.name}</h1>
             <div className='p-7 md:p-0 flex flex-col md:flex-row gap-3 md:gap-7 mb-7 md:mb-14'>

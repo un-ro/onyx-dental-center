@@ -69,7 +69,7 @@ export async function GET() {
           loc: `${baseUrl}blogs/${blog.slug}`,
           changefreq: "weekly",
           priority: 0.8,
-          lastmod: lastMod,
+          lastmod: blog.published_at ? new Date(blog.published_at).toISOString() : lastMod,
         })) || [];
 
       const urls: Record<string, string | number>[] = [

@@ -20,6 +20,11 @@ export async function generateMetadata(): Promise<Metadata> {
         description: "Discover the latest in dental care, innovative treatments, and oral health tips from our expert dentists. Stay informed, stay healthy.",
         images: [{ url: '/assets/images/home-section4-3.webp' }],
         path: '/blogs/en',
+        languageAlternates: {
+            'en': 'https://onyxdentalcenter.id/blogs/en',
+            'id': 'https://onyxdentalcenter.id/blogs/id',
+            'x-default': 'https://onyxdentalcenter.id/blogs/en',
+        },
     });
 };
 

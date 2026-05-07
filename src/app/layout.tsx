@@ -1,6 +1,13 @@
 // 'use client'
 
+import type { Metadata } from "next";
 import { EB_Garamond } from "next/font/google";
+
+export const metadata: Metadata = {
+  title: 'Onyx Dental Center | Klinik Gigi Jakarta — Veneer & Invisalign',
+  description: 'Onyx Dental Center, klinik gigi spesialis veneer, Invisalign, dan smile makeover di Jakarta. Konsultasi dengan dokter gigi berpengalaman.',
+  metadataBase: new URL('https://onyxdentalcenter.id'),
+};
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -26,7 +33,7 @@ export default async function RootLayout({
   const pixelId = 3800209303610125;
 
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
         <script

@@ -5,6 +5,7 @@ interface GenerateMetadataParams {
   images?: { url: string }[];
   path?: string;
   language?: string;
+  languageAlternates?: Record<string, string>;
 }
 
 export function metaData({
@@ -13,6 +14,7 @@ export function metaData({
   images = [],
   path = "",
   language = "en-id",
+  languageAlternates,
 }: GenerateMetadataParams): Metadata {
   const baseUrl = "https://onyxdentalcenter.id";
   const url = path ? `${baseUrl}${path}` : baseUrl;
@@ -36,9 +38,7 @@ export function metaData({
       siteName: "Onyx Dental Center – Klinik Gigi Terdekat di Karawaci, Tangerang",
     },
     alternates: {
-      languages: {
-        [language]: url,
-      },
+      languages: languageAlternates ?? { [language]: url },
     },
     // twitter: {
     //   card: "summary_large_image",

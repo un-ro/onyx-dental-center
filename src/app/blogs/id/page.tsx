@@ -20,6 +20,11 @@ export async function generateMetadata(): Promise<Metadata> {
         description: "Tips dan wawasan kesehatan gigi terbaru dari dokter ahli kami. Pelajari cara merawat gigi dengan benar.",
         images: [{ url: '/assets/images/home-section4-3.webp' }],
         path: '/blogs/id',
+        languageAlternates: {
+            'id': 'https://onyxdentalcenter.id/blogs/id',
+            'en': 'https://onyxdentalcenter.id/blogs/en',
+            'x-default': 'https://onyxdentalcenter.id/blogs/en',
+        },
     });
 };
 

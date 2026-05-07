@@ -65,7 +65,6 @@ export const doctors = [
   {
     name: "drg. Rio Jonas, M.Kes, Sert. Ort",
     excrept: "Orthodontic Certified Dentist",
-    // description: "Passionate Certified Orthodontist",
     slug: "drg-rio-jonas-m-kes-sert-ort",
     statistic: [
       {
@@ -101,7 +100,6 @@ export const doctors = [
   {
     name: "drg. Yeheskiel Mursalim",
     excrept: "Smile Makeover Expert",
-    // description: "Smile Makeover Expert",
     slug: "drg-yeheskiel-mursalim",
     statistic: [
       {
@@ -148,14 +146,7 @@ export const doctors = [
   {
     name: "drg. Eddy, PhD",
     excrept: "Aesthetic Restorations & Kid-Friendly Dentist",
-    // description: "Aesthetic Restorations & Kid-Friendly Dentist",
     slug: "drg-eddy-phd",
-    // statistic: [
-    //   {
-    //     title: "Happy Little Smiles",
-    //     value: 850,
-    //   },
-    // ],
     year_experience: 13,
     speciality: "Aesthetic restorations, veneers, and kids treatment",
     education: [
@@ -193,14 +184,7 @@ export const doctors = [
   {
     name: "drg. Melisa, Sp.Pros",
     excrept: "Dental Implant & Prosthetic Expert",
-    // description: "Dental Implant & Prosthetic Expert",
     slug: "drg-melisa-sp-pros",
-    // statistic: [
-    //   {
-    //     title: "Dentures",
-    //     value: 235,
-    //   },
-    // ],
     year_experience: 11,
     speciality: "Dental Implant, removable dentures, and smile makeover.",
     education: [
@@ -228,14 +212,7 @@ export const doctors = [
   {
     name: "drg. Ovelia Veres",
     excrept: "Aesthetic Restorations & Endodontic Dentist ",
-    // description: "Aesthetic Restorations & Endodontic Dentist",
     slug: "drg-ovelia-veres",
-    // statistic: [
-    //     {
-    //       title: "",
-    //       value: 0,
-    //     },
-    //   ],
     year_experience: 4,
     speciality: "Aesthetic restorations, endodontic treatments.",
     education: [
@@ -259,14 +236,7 @@ export const doctors = [
   {
     name: "drg. Florencia Stephanie",
     excrept: "Aesthetic Restorations & Endodontic Dentist",
-    // description: "Aesthetic Restorations & Endodontic Dentist",
     slug: "drg-florencia-stephanie",
-    // statistic: [
-    //     {
-    //       title: "",
-    //       value: 0,
-    //     },
-    //   ],
     year_experience: 3,
     speciality:
       "Endodontic treatment, aesthetic restorations, and tooth extractions.",
@@ -291,63 +261,9 @@ export const doctors = [
     ],
   },
   {
-    name: "drg. Arinanda Ramadhan",
-    excrept: "Aesthetic Restorations & General Dentist",
-    // description: "Aesthetic Restorations & General Dentist",
-    slug: "drg-arinanda-ramadhan",
-    // statistic: [
-    //     {
-    //       title: "",
-    //       value: 0,
-    //     },
-    //   ],
-    year_experience: 3,
-    speciality:
-      "Aesthetic restorations, endodontic treatments, and simple & surgical extractions.",
-    education: ["General Dentist - Institut Ilmu Kesehatan Kediri (2022)"],
-    description:
-      "Drg. Arinanda brings a focused and enthusiastic approach to general practice, particularly in restorative and endodontic care. With an ongoing commitment to continuing education and practical workshops, he is building a strong foundation for excellence. He is known for his attentive communication and willingness to support patients through each step of their treatment.",
-    schedule: [
-      {
-        day: "Monday",
-        time: "09.00 - 15.00",
-      },
-      {
-        day: "Tuesday",
-        time: "09.00 - 20.00",
-      },
-      {
-        day: "Thursday",
-        time: "09.00 - 15.00",
-      },
-      // {
-      //   day: "Friday",
-      //   time: "09.00 - 15.00",
-      // },
-      {
-        day: "Sunday",
-        time: "12.00 - 19.00",
-      },
-    ],
-    experience: [
-      "Clinical Sharing: Reaching the Aesthetic Finish Line – drg. Astrid, 2025",
-      "Direct Composite Anterior & Posterior – drg. Taufik Hidayat, 2024",
-      "Vital Pulp Regeneration: Theory & Practice – 17th DSM FKG UI, drg. Dini Asrianti, Sp.KG, 2023",
-      "Bridge Restoration: Step-by-Step – 17th DSM FKG UI, drg. Ratna Sari Dewi, Sp.Pros, 2023",
-      "Open Tooth Extraction & Bleeding Management – Dentaforia 6, Dr. Indra Mulyawan, 2024",
-    ],
-  },
-  {
     name: "drg. Jazila Afifa",
     excrept: "Aesthetic Restorations & General Dentist",
-    // description: "Aesthetic Restorations & General Dentist",
     slug: "drg-jazila-afifa",
-    // statistic: [
-    //     {
-    //       title: "",
-    //       value: 0,
-    //     },
-    //   ],
     year_experience: 3,
     speciality:
       "Smile makeovers, endodontic treatments, and removable & fixed prosthetics.",
@@ -379,14 +295,7 @@ export const doctors = [
   {
     name: "drg. Trisia Bella Kusuma",
     excrept: "Aesthetic Restorations & General Dentist",
-    // description: "Aesthetic Restorations & General Dentist",
     slug: "drg-trisia-bella-kusuma",
-    // statistic: [
-    //     {
-    //       title: "",
-    //       value: 0,
-    //     },
-    //   ],
     year_experience: 5,
     speciality:
       "Smile makeovers, root canal treatment, fixed and removable prosthetics.",
@@ -423,14 +332,7 @@ export const doctors = [
   {
     name: "drg. Fikri Al Hafiz",
     excrept: "Aesthetic Restorations & General Dentist",
-    // description: "Aesthetic Restorations & General Dentist",
     slug: "drg-fikri-al-hafiz",
-    // statistic: [
-    //     {
-    //       title: "",
-    //       value: 0,
-    //     },
-    //   ],
     year_experience: 4,
     speciality: "Aesthetic restorations, smile makeover, tooth extractions.",
     education: ["General Dentist - Universitas Andalas (2021)"],
@@ -460,4 +362,40 @@ export const doctors = [
       "Dental Photography & Direct Restoration – drg. Rezky, 2023",
     ],
   },
+  // {
+  //   name: "drg. Arinanda Ramadhan",
+  //   excrept: "Aesthetic Restorations & General Dentist",
+  //   slug: "drg-arinanda-ramadhan",
+  //   year_experience: 3,
+  //   speciality:
+  //     "Aesthetic restorations, endodontic treatments, and simple & surgical extractions.",
+  //   education: ["General Dentist - Institut Ilmu Kesehatan Kediri (2022)"],
+  //   description:
+  //     "Drg. Arinanda brings a focused and enthusiastic approach to general practice, particularly in restorative and endodontic care. With an ongoing commitment to continuing education and practical workshops, he is building a strong foundation for excellence. He is known for his attentive communication and willingness to support patients through each step of their treatment.",
+  //   schedule: [
+  //     {
+  //       day: "Monday",
+  //       time: "09.00 - 15.00",
+  //     },
+  //     {
+  //       day: "Tuesday",
+  //       time: "09.00 - 20.00",
+  //     },
+  //     {
+  //       day: "Thursday",
+  //       time: "09.00 - 15.00",
+  //     },
+  //     {
+  //       day: "Sunday",
+  //       time: "12.00 - 19.00",
+  //     },
+  //   ],
+  //   experience: [
+  //     "Clinical Sharing: Reaching the Aesthetic Finish Line – drg. Astrid, 2025",
+  //     "Direct Composite Anterior & Posterior – drg. Taufik Hidayat, 2024",
+  //     "Vital Pulp Regeneration: Theory & Practice – 17th DSM FKG UI, drg. Dini Asrianti, Sp.KG, 2023",
+  //     "Bridge Restoration: Step-by-Step – 17th DSM FKG UI, drg. Ratna Sari Dewi, Sp.Pros, 2023",
+  //     "Open Tooth Extraction & Bleeding Management – Dentaforia 6, Dr. Indra Mulyawan, 2024",
+  //   ],
+  // },
 ];

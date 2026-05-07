@@ -62,9 +62,9 @@ export default async function OurTeam() {
               </div>
             ))}
           </div>
-          <div className="flex flex-wrap flex-col md:flex-row justify-between gap-6 md:gap-8 mb-6 md:mb-12">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4 mb-6 md:mb-12">
             {doctors.map((item, index) => (
-              (index > 2) && <div className="bg-white md:w-[22.5%] drop-shadow-md" key={index}>
+              (index > 2) && <div className="bg-white drop-shadow-md" key={item.slug}>
                 <Image
                   src={`/assets/images/doctor/doctor-person-${index + 1}.webp`}
                   alt={`doctor-${item.slug}`}

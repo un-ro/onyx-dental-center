@@ -24,14 +24,23 @@ export async function getBlogs(
     ? `${BASE_URL}/posts?language=${language}`
     : `${BASE_URL}/posts`;
 
-  const res = await fetcher<BaseResponse<Post>>(url, {
-    next: {
-      revalidate: DEFAULT_REVALIDATE_BLOGS,
-      tags: [`blogs-${language || "all"}`], // Unique cache tag per language
-    },
-  });
+  try {
+    const res = await fetcher<BaseResponse<Post>>(url, {
+      next: {
+        revalidate: DEFAULT_REVALIDATE_BLOGS,
+        tags: [`blogs-${language || "all"}`], // Unique cache tag per language
+      },
+    });
 
-  return res;
+    return res;
+  } catch (error) {
+    console.error("Failed to fetch blogs:", error);
+    return {
+      success: true,
+      message: "Fallback blogs data",
+      data: [],
+    };
+  }
 }
 
 // Remove getBlogsId and getBlogsEn, replace with:

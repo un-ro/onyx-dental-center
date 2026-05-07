@@ -51,7 +51,7 @@ export default function Navbar({ settings }: { settings: Setting }) {
                 <div className="container mx-auto flex h-16 md:h-20 md:max-w-5xl xl:max-w-6xl items-center justify-between px-4 xl:px-0">
                     <Link href="/" className="hidden md:flex md:items-center gap-2">
                         {/* <MountainIcon className="h-6 w-6 text-white" /> */}
-                        <Image src="/logo.png" alt="logo" className="w-36" width={24} height={24} priority />
+                        <Image src="/logo.webp" alt="logo" className="w-36" width={24} height={24} priority />
                         <span className="sr-only">logo</span>
                     </Link>
                     {/* <div className="hidden md:flex gap-8"> */}

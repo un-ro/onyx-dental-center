@@ -48,7 +48,7 @@ export default async function RootLayout({
                   "name": "Onyx Dental Center",
                   "description": "Jakarta's premier smile studio specializing in veneers, Invisalign, and smile makeovers.",
                   "url": "https://onyxdentalcenter.id/",
-                  "logo": "https://onyxdentalcenter.id/logo.png",
+                  "logo": "https://onyxdentalcenter.id/logo.webp",
                   "image": "https://onyxdentalcenter.id/assets/images/home-section1.webp",
                   "telephone": "+62-812-8663-2240",
                   "address": {

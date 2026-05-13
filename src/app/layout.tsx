@@ -2,6 +2,8 @@
 
 import type { Metadata } from "next";
 import { EB_Garamond } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: 'Onyx Dental Center | Klinik Gigi Jakarta — Veneer & Invisalign',
@@ -192,6 +194,8 @@ fbq('track', 'PageView');
           </Suspense>
         </main>
         <Footer settings={settings.data} />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

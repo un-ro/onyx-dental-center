@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { getBlogsForSitemap } from "@/lib/api";
+import { locationPaths } from "@/lib/data/location";
 import { NextResponse } from "next/server";
 
 type SitemapImage = { loc: string; caption?: string };
@@ -14,6 +15,24 @@ type SitemapUrl = {
 
 let cachedSitemap: string | null = null;
 let lastFetched = 0;
+
+const escapeXml = (value: string | number) =>
+  String(value).replace(/[<>&'"]/g, (char) => {
+    switch (char) {
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case "&":
+        return "&amp;";
+      case "'":
+        return "&apos;";
+      case '"':
+        return "&quot;";
+      default:
+        return char;
+    }
+  });
 
 const treatmentImages: Record<string, string> = {
   "treatment/veneers": "treatment-detail-1.webp",
@@ -77,6 +96,7 @@ export async function GET() {
         "blogs/id",
         ...doctorUrls,
         ...treatmentUrls,
+        ...locationPaths,
       ];
 
       const staticUrls: SitemapUrl[] = allUrls.map((url) => {
@@ -121,8 +141,8 @@ export async function GET() {
       const renderImages = (images?: SitemapImage[]) =>
         images?.map(img => `
             <image:image>
-              <image:loc>${img.loc}</image:loc>
-              ${img.caption ? `<image:caption>${img.caption}</image:caption>` : ""}
+              <image:loc>${escapeXml(img.loc)}</image:loc>
+              ${img.caption ? `<image:caption>${escapeXml(img.caption)}</image:caption>` : ""}
             </image:image>`).join("") ?? "";
 
       const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -132,10 +152,10 @@ export async function GET() {
           .map(
             (url) => `
           <url>
-            <loc>${url.loc}</loc>
-            ${url?.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : `<lastmod>${lastMod}</lastmod>`}
-            <changefreq>${url.changefreq}</changefreq>
-            <priority>${url.priority}</priority>${renderImages(url.images)}
+            <loc>${escapeXml(url.loc)}</loc>
+            ${url?.lastmod ? `<lastmod>${escapeXml(url.lastmod)}</lastmod>` : `<lastmod>${escapeXml(lastMod)}</lastmod>`}
+            <changefreq>${escapeXml(url.changefreq)}</changefreq>
+            <priority>${escapeXml(url.priority)}</priority>${renderImages(url.images)}
           </url>`
           )
           .join("")}

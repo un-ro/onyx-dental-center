@@ -25,6 +25,10 @@ export default async function Footer({ settings }: { settings: Setting }) {
         {
             label: "Blog",
             href: "/blogs",
+        },
+        {
+            label: "Near / Area Served",
+            href: "/location",
         }
     ]
 
@@ -63,7 +67,7 @@ export default async function Footer({ settings }: { settings: Setting }) {
                             <Link href={`tel:${(settings.contactInfo?.phone ?? '+628126632240').replace(/\D/g, '').replace(/^0/, '+62')}`} className='font-bold'>
                                 {settings.contactInfo?.phone ?? '+62 812-8663-2240'}
                             </Link>
-                            
+
                             <p>Near / Area Served: Lippo Karawaci • Karawaci • Kelapa Dua • Gading Serpong • Tangerang</p>
 
                             <Link className='flex items-center font-bold' href={settings?.mapUrl ?? 'https://maps.app.goo.gl/5AqjUPYF1gZtmtuh9'} target='_blank'>

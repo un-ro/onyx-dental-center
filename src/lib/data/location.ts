@@ -38,8 +38,8 @@ export const locationPages: LocationPage[] = [
         imageUrl: "/assets/images/home-section2-3.webp",
       },
       {
-        heading: "Near dental Karawaci area",
-        body: "For patients searching near dental Karawaci area, every appointment includes clear explanations, refined smile planning, and technology-led care before treatment starts.",
+        heading: "Dentist near Karawaci area",
+        body: "For patients searching for a dentist near the Karawaci area, Onyx Dental Center is here to provide you with the best dental experience. Every appointment includes clear explanations, refined smile planning, and technology-led care before treatment begins.",
         imageUrl: "/assets/images/doctor/doctor-banner.webp",
       },
       {

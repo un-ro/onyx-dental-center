@@ -2,15 +2,53 @@
 
 import { useEffect, useState } from 'react';
 
+type TocHeading = Pick<Element, 'tagName' | 'textContent' | 'id'>;
+
+interface TocLink {
+    id: string;
+    text: string;
+}
+
 interface TocItem {
     id: string;
     text: string;
-    level: number;
+    children: TocLink[];
 }
 
 interface TableOfContentsProps {
     htmlContent: string;
     language?: string;
+}
+
+export function buildTocItems(headings: TocHeading[]) {
+    const items: TocItem[] = [];
+
+    headings.forEach((heading, index) => {
+        const level = parseInt(heading.tagName.charAt(1));
+
+        if (level !== 2 && level !== 3) return;
+
+        const text = heading.textContent || '';
+        let id = heading.id;
+
+        if (!id) {
+            id = text
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
+
+            id = `${id}-${index}`;
+        }
+
+        if (level === 2) {
+            items.push({ id, text, children: [] });
+            return;
+        }
+
+        items[items.length - 1]?.children.push({ id, text });
+    });
+
+    return items;
 }
 
 export default function TableOfContents({ htmlContent, language }: TableOfContentsProps) {
@@ -22,31 +60,14 @@ export default function TableOfContents({ htmlContent, language }: TableOfConten
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = htmlContent;
 
-        // Find all heading elements (h1-h6)
+        // Keep the all-heading index aligned with BlogContent generated IDs.
         const headings = tempDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
-        
-        const items: TocItem[] = [];
-        
-        headings.forEach((heading, index) => {
-            const level = parseInt(heading.tagName.charAt(1));
-            const text = heading.textContent || '';
-            
-            // Generate ID if it doesn't exist
-            let id = heading.id;
-            if (!id) {
-                id = text
-                    .toLowerCase()
-                    .replace(/[^a-z0-9]+/g, '-')
-                    .replace(/(^-|-$)/g, '');
-                
-                // Ensure uniqueness
-                id = `${id}-${index}`;
-            }
-            
-            items.push({ id, text, level });
-        });
 
-        setTocItems(items);
+        const timeoutId = window.setTimeout(() => {
+            setTocItems(buildTocItems(Array.from(headings)));
+        }, 0);
+
+        return () => window.clearTimeout(timeoutId);
     }, [htmlContent]);
 
     // Don't render if no headings found
@@ -96,19 +117,9 @@ export default function TableOfContents({ htmlContent, language }: TableOfConten
 
             {/* Navigation Content */}
             <nav className={`mt-2 md:mt-4 ${isExpanded ? 'block' : 'hidden md:block'}`}>
-                <ol className="list-decimal list-inside space-y-1 md:space-y-2">
+                <ol className="list-decimal list-outside space-y-1 pl-5 md:space-y-2">
                     {tocItems.map((item) => (
-                        <li
-                            key={item.id}
-                            style={{ 
-                                marginLeft: `${(item.level - 1) * 8}px`,
-                                // Responsive indentation for desktop
-                                ...(typeof window !== 'undefined' && window.innerWidth >= 768 && {
-                                    marginLeft: `${(item.level - 1) * 16}px`
-                                })
-                            }}
-                            className="break-words"
-                        >
+                        <li key={item.id} className="break-words">
                             <button
                                 onClick={() => handleClick(item.id)}
                                 className="text-left text-xs md:text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 leading-relaxed"
@@ -116,6 +127,21 @@ export default function TableOfContents({ htmlContent, language }: TableOfConten
                             >
                                 {item.text}
                             </button>
+                            {item.children.length > 0 && (
+                                <ol type="I" className="mt-1 list-outside space-y-1 pl-5 md:space-y-2">
+                                    {item.children.map((child) => (
+                                        <li key={child.id} className="break-words">
+                                            <button
+                                                onClick={() => handleClick(child.id)}
+                                                className="text-left text-xs md:text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 leading-relaxed"
+                                                title={`Jump to: ${child.text}`}
+                                            >
+                                                {child.text}
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ol>
+                            )}
                         </li>
                     ))}
                 </ol>

@@ -84,6 +84,40 @@ export const locationPages: LocationPage[] = [
     ],
     ctaLabel: "Chat Onyx Dental Center",
   },
+  {
+    slug: "klinik-gigi-karawaci",
+    locale: "id",
+    alternateSlug: "dental-near-karawaci",
+    title: "Klinik Gigi Karawaci",
+    metadataTitle: "Klinik Gigi Terdekat Karawaci | Onyx Dental Center",
+    description:
+      "Onyx Dental Center Karawaci Ruko Asia Millenium, Jl. Taman Permata No.65 Blok C-1, Binong, Kec. Curug, Kabupaten Tangerang, Banten 1581109.00 - 20.00 08126632240",
+    eyebrow: "Area Karawaci",
+    imageAlt: "Klinik gigi terdekat di Karawaci",
+    imageUrl: "/assets/images/experience/experience-image-1.webp",
+    intro:
+      "Sedang mencari klinik gigi terdekat Karawaci? Onyx Dental Center menghadirkan perawatan gigi personal untuk pasien di sekitar Karawaci, Lippo Village, Binong, dan area Tangerang sekitarnya.",
+    mapLabel: "Buka Onyx Dental Center di Google Maps",
+    mapUrl: "https://maps.app.goo.gl/5AqjUPYF1gZtmtuh9",
+    sections: [
+      {
+        heading: "Perawatan gigi dekat Karawaci",
+        body: "Klinik kami melayani pemeriksaan rutin, dental spa, bleaching, veneer, crown, implan gigi, orthodontic, hingga konsultasi smile makeover dalam satu dental center modern.",
+        imageUrl: "/assets/images/home-section2-3.webp",
+      },
+      {
+        heading: "Dokter gigi terdekat di Karawaci",
+        body: "Bagi pasien yang mencari dokter gigi terdekat di Karawaci, setiap sesi dilengkapi penjelasan yang mudah dipahami, perencanaan senyum yang detail, dan teknologi pendukung.",
+        imageUrl: "/assets/images/doctor/doctor-banner.webp",
+      },
+      {
+        heading: "Mudah dijangkau dari Karawaci",
+        body: "Onyx Dental Center berada di area Tangerang, sehingga menjadi pilihan praktis bagi pasien yang mencari dokter gigi di sekitar Karawaci dan kawasan sekitarnya.",
+        imageUrl: "/assets/images/experience/experience-image-2.webp",
+      },
+    ],
+    ctaLabel: "Chat Onyx Dental Center",
+  },
 ];
 
 export const locationPaths = locationPages.map((page) => `location/${page.slug}`);

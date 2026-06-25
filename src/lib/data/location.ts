@@ -88,7 +88,7 @@ export const locationPages: LocationPage[] = [
     slug: "klinik-gigi-karawaci",
     locale: "id",
     alternateSlug: "dental-near-karawaci",
-    title: "Klinik Gigi Karawaci",
+    title: "Onyx Dental Center Karawaci",
     metadataTitle: "Klinik Gigi Terdekat Karawaci | Onyx Dental Center",
     description:
       "Onyx Dental Center Karawaci Ruko Asia Millenium, Jl. Taman Permata No.65 Blok C-1, Binong, Kec. Curug, Kabupaten Tangerang, Banten 1581109.00 - 20.00 08126632240",

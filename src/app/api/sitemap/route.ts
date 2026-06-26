@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { getBlogsForSitemap } from "@/lib/api";
+import { doctors } from "@/lib/data/doctor";
 import { locationPaths } from "@/lib/data/location";
 import { NextResponse } from "next/server";
 
@@ -59,19 +60,10 @@ export async function GET() {
       const baseUrl = "https://onyxdentalcenter.id/";
       const assetsBase = `${baseUrl}assets/images`;
 
-      const doctorUrls: Array<string> = [
-        "ourteam/drg-trisia-bella-kusuma",
-        "ourteam/drg-eka-yesaya",
-        "ourteam/drg-fikri-al-hafiz",
-        "ourteam/drg-ovelia-veres",
-        "ourteam/drg-melisa-sp-pros",
-        "ourteam/drg-arinanda-ramadhan",
-        "ourteam/drg-yeheskiel-mursalim",
-        "ourteam/drg-rio-jonas-m-kes-sert-ort",
-        "ourteam/drg-eddy-phd",
-        "ourteam/drg-florencia-stephanie",
-        "ourteam/drg-jazila-afifa",
-      ];
+      const doctorUrls = doctors.flatMap((doctor) => [
+        `ourteam/${doctor.slug}`,
+        `dokter-gigi/${doctor.slug}`,
+      ]);
 
       const treatmentUrls: Array<string> = [
         "treatment/veneers",
@@ -87,6 +79,7 @@ export async function GET() {
 
       const allUrls: Array<string> = [
         "ourteam",
+        "dokter-gigi",
         "treatment",
         "experience",
         "philosophy",

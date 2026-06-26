@@ -10,10 +10,11 @@ import Icons from "@/components/Icon";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Our Team - Onyx Dental Center',
-    description: 'Profesional Aesthetic dentists near you. Nearby dentists in Jakarta, Tangerang, Bekasi, BSD, Alam Sutera, Serpong, Bintaro, and Puri Indah.',
+    title: 'Dokter Gigi Karawaci - Onyx Dental Center',
+    description: 'Temui dokter gigi profesional dan terbaik di Karawaci, Tangerang, untuk perawatan estetik, veneer, implant, orthodontic, dan smile makeover di Onyx Dental Center.',
     images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
-    path: '/ourteam',
+    path: '/dokter-gigi',
+    language: 'id-id',
   });
 }
 
@@ -34,8 +35,8 @@ export default async function OurTeam() {
         <div className='bg-custom-black md:bg-transparent md:absolute bottom-0 w-full h-full flex justify-center items-end'>
           <div className="w-full md:max-w-5xl xl:max-w-6xl z-20 md:mb-[12vh]">
             <div className="p-7 md:p-0 md:max-w-[55%] flex flex-col h-full text-white">
-              <h1 className="text-4xl text-[40px] mb-2 md:text-6xl md:leading-[76px] font-eb-garamond font-bold">Our Team</h1>
-              <p>A smile is more than aesthetics. It’s emotion, identity, and it’s our passion to design it.</p>
+              <h1 className="text-4xl text-[40px] mb-2 md:text-6xl md:leading-[76px] font-eb-garamond font-bold">Dokter Gigi Terbaik di Karawaci</h1>
+              <p>Temui tim dokter gigi Onyx Dental Center yang berpengalaman merancang senyum sehat, natural, dan percaya diri.</p>
             </div>
           </div>
         </div>
@@ -56,8 +57,8 @@ export default async function OurTeam() {
                 <div className="flex flex-col gap-3 p-4">
                   <h5 className="leading-[150%] text-lg font-bold text-custom-text-color">{item.name}</h5>
                   <p className="text-custom-text-color-2 mb-2">{item.excrept}</p>
-                  <Link className="text-sm text-custom-text-color leading-[130%] font-semibold flex gap-2 items-center" href={`/ourteam/${item.slug}`}>
-                    See detail & schedules <Icons name="arrow-long-right" className="w-4 h-4 text-custom-text-color" />
+                  <Link className="text-sm text-custom-text-color leading-[130%] font-semibold flex gap-2 items-center" href={`/dokter-gigi/${item.slug}`}>
+                    Lihat profil & jadwal <Icons name="arrow-long-right" className="w-4 h-4 text-custom-text-color" />
                   </Link>
                 </div>
               </div>
@@ -76,8 +77,8 @@ export default async function OurTeam() {
                 <div className="flex flex-col gap-3 p-4">
                   <h5 className="leading-[150%] text-lg font-bold text-custom-text-color">{item.name}</h5>
                   <p className="text-custom-text-color-2 mb-2">{item.excrept}</p>
-                  <Link className="text-sm text-custom-text-color leading-[130%] font-semibold flex gap-2 items-center" href={`/ourteam/${item.slug}`}>
-                    See detail & schedules <Icons name="arrow-long-right" className="w-4 h-4 text-custom-text-color" />
+                  <Link className="text-sm text-custom-text-color leading-[130%] font-semibold flex gap-2 items-center" href={`/dokter-gigi/${item.slug}`}>
+                    Lihat profil & jadwal <Icons name="arrow-long-right" className="w-4 h-4 text-custom-text-color" />
                   </Link>
                 </div>
               </div>
@@ -86,15 +87,15 @@ export default async function OurTeam() {
         </div>
       </section>
       <Cta
-        title="Personalized Care by Trusted Hands"
+        title="Perawatan Personal oleh Dokter Gigi Tepercaya"
         description={`
-          Each ONYX dentist brings years of skill, passion, and precision to your smile.
-          Choose your expert and take the first step today.
+          Cari dokter gigi Karawaci yang tepat untuk kebutuhan senyum Anda.
+          Pilih dokter Onyx Dental Center dan buat janji konsultasi hari ini.
         `}
         image="doctor/doctor-cta"
         classNameImage="mt-6"
         classNameDescription="pr-[10%] md:pr-0"
-        buttonLabel="Book Your Session Now"
+        buttonLabel="Buat Janji Sekarang"
       />
     </PageWrapper>
   );

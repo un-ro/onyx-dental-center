@@ -8,10 +8,10 @@ const list: { image: string; description: string }[] = [
         image: "/assets/images/home-section3-1.webp",
         description: "Natural-looking veneers for the upper front teeth",
     },
-    {
-        image: "/assets/images/home-section3-2.webp",
-        description: "Conventional metal braces for crowded teeth and narrow arch condition",
-    },
+    // {
+    //     image: "/assets/images/home-section3-2.webp",
+    //     description: "Conventional metal braces for crowded teeth and narrow arch condition",
+    // },
     {
         image: "/assets/images/home-section3-3.webp",
         description: "A comprehensive smile makeover using bridges and crowns",

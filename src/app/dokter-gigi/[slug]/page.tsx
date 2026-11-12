@@ -8,6 +8,7 @@ import { metaData } from "@/lib/utils/metadata";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import HtmlLang from "@/components/HtmlLang";
 
 export function generateStaticParams() {
     return doctors.map((doctor) => ({
@@ -25,7 +26,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: 'Temui dokter gigi profesional dan terbaik di Karawaci, Tangerang, untuk perawatan estetik, veneer, implant, orthodontic, dan smile makeover di Onyx Dental Center.',
             images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
             path: '/dokter-gigi',
-            language: 'id-id',
+            languageAlternates: {
+                'id-ID': 'https://onyxdentalcenter.id/dokter-gigi',
+                'en-ID': 'https://onyxdentalcenter.id/ourteam',
+                'x-default': 'https://onyxdentalcenter.id/ourteam',
+            },
         });
     }
 
@@ -33,10 +38,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return metaData({
         title: `${doctor.name} - Dokter Gigi Karawaci | Onyx Dental Center`,
-        description: `Profil ${doctor.name}, dokter gigi di Karawaci dengan pengalaman ${doctor.year_experience} tahun dalam ${doctor.speciality}. Buat janji di Onyx Dental Center, dokter gigi terdekat untuk area Tangerang dan Karawaci.`,
+        description: `Profil ${doctor.name}, dokter gigi di Karawaci dengan pengalaman ${doctor.year_experience} tahun dalam ${doctor.speciality_id}. Buat janji di Onyx Dental Center, dokter gigi terdekat untuk area Tangerang dan Karawaci.`,
         images: [{ url: `/assets/images/doctor/doctor-detail-${index + 1}.webp` }],
         path: `/dokter-gigi/${slug}`,
-        language: 'id-id',
+        languageAlternates: {
+            'id-ID': `https://onyxdentalcenter.id/dokter-gigi/${slug}`,
+            'en-ID': `https://onyxdentalcenter.id/ourteam/${slug}`,
+            'x-default': `https://onyxdentalcenter.id/ourteam/${slug}`,
+        },
     });
 }
 
@@ -47,6 +56,7 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
     const doctor = doctors.find((d) => d.slug === slug);
     const index = doctors.findIndex((d) => d.slug === slug);
     return (<PageWrapper className="w-full min-h-screen flex justify-center bg-custom-primary">
+        <HtmlLang lang="id" />
         <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -55,11 +65,11 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
                     "@type": "Physician",
                     "name": doctor?.name ?? '',
                     "jobTitle": "Dokter Gigi",
-                    "description": doctor?.description ?? '',
+                    "description": doctor?.description_id ?? '',
                     "worksFor": { "@id": "https://onyxdentalcenter.id/#business" },
                     "url": `https://onyxdentalcenter.id/dokter-gigi/${slug}`,
                     "image": `https://onyxdentalcenter.id/assets/images/doctor/doctor-detail-${index + 1}.webp`,
-                    "knowsAbout": doctor?.speciality ? [doctor.speciality] : [],
+                    "knowsAbout": doctor?.speciality_id ? [doctor.speciality_id] : [],
                     "alumniOf": doctor?.education?.map((edu: string) => ({
                         "@type": "EducationalOrganization",
                         "name": edu
@@ -87,13 +97,13 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
             <div className="grid grid-cols-1 md:grid-cols-2 mb-14">
                 <Image
                     src={`/assets/images/doctor/doctor-detail-${index + 1}.webp`}
-                    alt={`doctor-${slug}`}
+                    alt={doctor ? `${doctor.name} – ${doctor.excrept_id}` : `doctor-${slug}`}
                     width={500}
                     height={500}
                     className="w-full"
                 />
                 <div className="flex flex-col justify-between bg-custom-white-accent p-10">
-                    <h2 className="leading-[130%] text-3xl font-eb-garamond font-semibold mb-4" >Profil</h2>
+                    <h2 className="leading-[130%] text-3xl font-eb-garamond font-semibold mb-4" >Profil <Link href={`/ourteam/${slug}`} hrefLang="en" className="underline text-sm font-helvetica font-normal align-middle ml-2">English</Link></h2>
 
                     <div>
                         <div className='mb-4'>
@@ -103,7 +113,7 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
 
                         <div className='mb-4'>
                             <p className="text-custom-text-color-3">Spesialisasi</p>
-                            <p className="font-bold">{doctor?.speciality}</p>
+                            <p className="font-bold">{doctor?.speciality_id}</p>
                         </div>
 
                         <div className='mb-4'>
@@ -115,11 +125,11 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
                     </div>
 
                     <div>
-                        <p className="mb-4">{doctor?.description}</p>
+                        <p className="mb-4">{doctor?.description_id}</p>
 
                         <Button className="w-full md:w-auto flex text-black font-helvetica font-semibold cursor-pointer bg-custom-brown rounded-none py-5 mb-4 md:mb-0 md:mr-4 hover:bg-custom-brown/70">
                             <Link href={settings?.data?.link_whatsapp || ''} target="_blank">
-                                Buat Janji Sekarang
+                                Buat Booking Sekarang
                             </Link>
                         </Button>
                     </div>
@@ -156,7 +166,7 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
                 className='w-full p-7 md:p-0'
             >
                 <AccordionItem className='border-none' value={`item-1`}>
-                    <AccordionTrigger icon="chevron" iconClassName="size-8" className='text-2xl md:text-4xl font-eb-garamond font-semibold leading-[130%] md:leading-[47px] items-center border-none'>Pendidikan Berkelanjutan & Kegiatan Pembicara</AccordionTrigger>
+                    <AccordionTrigger icon="chevron" iconClassName="size-8" className='text-2xl md:text-4xl font-eb-garamond font-semibold leading-[130%] md:leading-[47px] items-center border-none'>Pendidikan & Pengalaman</AccordionTrigger>
                     <hr className="w-full border-custom-text-color mb-4" />
                     <AccordionContent className='' >
                         {/* <hr className="w-full border-custom-text-color mb-4" /> */}

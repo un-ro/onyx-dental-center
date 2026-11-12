@@ -47,7 +47,7 @@ export default function HeroVideoResponsive({ settings }: { settings: Setting })
                 <div className='w-full h-full flex justify-center items-end'>
                     <div className="w-full md:max-w-5xl xl:max-w-6xl relative z-10 mb-[20vh]">
                         <div className="px-7 md:px-0 md:max-w-[55%] flex flex-col items-center justify-center h-full text-white">
-                            <h1 className="text-4xl text-[40px] mb-8 md:text-6xl font-eb-garamond font-bold">Crafting The <br className='md:hidden' /> Best Version of <span className=' font-eb-garamond italic font-light'>Your Smile</span></h1>
+                            <h1 className="text-4xl text-[40px] mb-8 md:text-6xl font-eb-garamond font-bold"><span className="block mb-3 font-helvetica text-base md:text-lg font-semibold uppercase tracking-wide not-italic">Dental Clinic in Karawaci, Tangerang</span>Crafting The <br className='md:hidden' /> Best Version of <span className=' font-eb-garamond italic font-light'>Your Smile</span></h1>
 
                             <div className='hidden md:grid w-full grid-cols-3 justify-between mb-10'>
                                 <div>

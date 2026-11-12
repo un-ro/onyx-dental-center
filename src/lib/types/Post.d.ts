@@ -30,4 +30,5 @@ declare type Post = {
   category: string[];
   authorId: string | null;
   published_at: string | null;
+  updated_at?: string | null;
 };

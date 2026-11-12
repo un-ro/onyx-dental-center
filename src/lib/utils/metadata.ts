@@ -4,7 +4,6 @@ interface GenerateMetadataParams {
   description: string;
   images?: { url: string }[];
   path?: string;
-  language?: string;
   languageAlternates?: Record<string, string>;
 }
 
@@ -13,7 +12,6 @@ export function metaData({
   description,
   images = [],
   path = "",
-  language = "en-id",
   languageAlternates,
 }: GenerateMetadataParams): Metadata {
   const baseUrl = "https://onyxdentalcenter.id";
@@ -38,13 +36,14 @@ export function metaData({
       siteName: "Onyx Dental Center – Klinik Gigi Terdekat di Karawaci, Tangerang",
     },
     alternates: {
-      languages: languageAlternates ?? { [language]: url },
+      canonical: url,
+      ...(languageAlternates ? { languages: languageAlternates } : {}),
     },
-    // twitter: {
-    //   card: "summary_large_image",
-    //   title,
-    //   description,
-    //   images: images.map((img) => img.url),
-    // },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: images.map((img) => img.url),
+    },
   };
 }

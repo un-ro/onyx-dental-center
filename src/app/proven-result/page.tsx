@@ -109,9 +109,9 @@ export default async function ProvenResult() {
         <div className="w-full flex flex-col md:max-w-5xl xl:max-w-6xl">
           {list.map((item, itemIndex) => (
             <div key={itemIndex} className="mb-8 md:mb-0">
-              <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6">
+              <h2 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6">
                 {item.title}
-              </h1>
+              </h2>
               <div className="flex flex-wrap flex-col md:flex-row justify-between gap-6 md:gap-8 mb-6 md:mb-12">
                 {item.description.map((sub, subIndex) => {
                   const globalIndex = list
@@ -122,7 +122,7 @@ export default async function ProvenResult() {
                     <div className="md:w-[31%]" key={globalIndex}>
                       <Image
                         src={`/assets/images/proven-result/proven-result-${globalIndex}.webp`}
-                        alt={`Proven Result ${globalIndex}`}
+                        alt={`${item.title} result: ${sub}`}
                         width={500}
                         height={500}
                         className="w-full"

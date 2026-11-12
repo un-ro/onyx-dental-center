@@ -18,6 +18,10 @@ export const doctors = [
     education: ["General Dentist - Universitas Prof. Dr. Moestopo (B) (2012)"],
     description:
       "With over 13 years of clinical experience and more than 1,000 veneer cases completed, drg. Eka is recognized for his clinical precision and expertise in aesthetic and digital dentistry. He is also an active speaker and instructor across national events, reflecting his passion for sharing knowledge. His treatment philosophy combines strong technical fundamentals with a contemporary aesthetic sensibility.",
+    excrept_id: "Ahli Kedokteran Gigi Estetik & Digital",
+    speciality_id: "Kedokteran gigi digital, smile makeover, serta veneer & crown",
+    description_id:
+      "Dengan pengalaman klinis lebih dari 13 tahun dan lebih dari 1.000 kasus veneer yang telah diselesaikan, drg. Eka dikenal atas presisi klinis dan keahliannya di bidang kedokteran gigi estetik dan digital. Beliau juga aktif sebagai pembicara dan instruktur di berbagai acara nasional, mencerminkan semangatnya dalam berbagi ilmu. Filosofi perawatannya memadukan fondasi teknis yang kuat dengan sensibilitas estetik kontemporer.",
     schedule: [
       {
         day: "Monday",
@@ -81,6 +85,11 @@ export const doctors = [
     ],
     description:
       "With more than 22 years of expertise, drg. Rio Jonas is a certified orthodontist recognized for his extensive knowledge in handling complex orthodontic cases. Upon obtaining his certification in orthodontics from Universitas Trisakti in 2008, he has effectively carried out over 500 orthodontic treatments utilizing fixed appliances and various advanced methods. His composed manner and meticulous method establish him as a reliable expert in tooth alignment and facial aesthetics.",
+    excrept_id: "Dokter Gigi Tersertifikasi Ortodonti",
+    speciality_id:
+      "Perawatan ortodonti (behel cekat & kasus kompleks), clear aligner",
+    description_id:
+      "Dengan keahlian lebih dari 22 tahun, drg. Rio Jonas adalah dokter gigi tersertifikasi ortodonti yang dikenal atas pengetahuannya yang luas dalam menangani kasus ortodonti kompleks. Setelah memperoleh sertifikasi ortodonti dari Universitas Trisakti pada 2008, beliau telah menyelesaikan lebih dari 500 perawatan ortodonti menggunakan behel cekat dan berbagai metode lanjutan. Sikapnya yang tenang dan metodenya yang teliti menjadikannya ahli tepercaya dalam perapihan gigi dan estetika wajah.",
     schedule: [
       {
         day: "Monday",
@@ -116,6 +125,10 @@ export const doctors = [
     education: ["General Dentist- Universitas Prof. Dr. Moestopo (B) (2014)"],
     description:
       "With a focus on smile design, drg. Yeheskiel has completed over 700 veneer cases and more than 70 smile makeovers. His professional style is refined and comprehensive, always aiming for balance between aesthetics and functionality. He is highly regarded for his ability to deliver natural-looking results through careful planning and technical excellence.",
+    excrept_id: "Ahli Smile Makeover",
+    speciality_id: "Smile makeover, restorasi veneer & crown",
+    description_id:
+      "Dengan fokus pada desain senyum, drg. Yeheskiel telah menyelesaikan lebih dari 700 kasus veneer dan lebih dari 70 smile makeover. Gaya profesionalnya halus dan menyeluruh, selalu mengutamakan keseimbangan antara estetika dan fungsi. Beliau sangat dihargai atas kemampuannya menghadirkan hasil yang tampak alami melalui perencanaan yang cermat dan keunggulan teknis.",
     schedule: [
       {
         day: "Tuesday",
@@ -155,6 +168,10 @@ export const doctors = [
     ],
     description:
       "Drg. Eddy combines a strong academic background in dental materials and his clinical experience. He is also a lecturer at Universitas Trisakti. With hundreds of completed cases and contributions as a speaker at international scientific forums, he brings a research-based perspective to patient care. His approach is thoughtful and evidence-driven, with a focus on gentle and durable outcomes. His calm and gentle demeanor helps pediatric patients feel comfortable and cared for.",
+    excrept_id: "Dokter Gigi Restorasi Estetik & Ramah Anak",
+    speciality_id: "Restorasi estetik, veneer, dan perawatan gigi anak",
+    description_id:
+      "Drg. Eddy memadukan latar belakang akademis yang kuat di bidang material kedokteran gigi dengan pengalaman klinisnya. Beliau juga dosen di Universitas Trisakti. Dengan ratusan kasus yang telah diselesaikan serta kontribusi sebagai pembicara di forum ilmiah internasional, beliau menghadirkan perspektif berbasis riset dalam perawatan pasien. Pendekatannya penuh pertimbangan dan berbasis bukti, dengan fokus pada hasil yang lembut dan tahan lama. Sikapnya yang tenang dan lembut membuat pasien anak merasa nyaman dan terjaga.",
     schedule: [
       {
         day: "Monday",
@@ -193,6 +210,10 @@ export const doctors = [
     ],
     description:
       "A prosthodontist with 11 years of experience, drg. Melisa combines academic excellence with a compassionate approach. She is also an active lecturer in  Universitas Prof. Dr. Moestopo (B). She has successfully managed over 200 denture cases. Her clinical manner is calm and detail-oriented, allowing her to build trust with patients undergoing complex prosthetic or implant treatments.",
+    excrept_id: "Ahli Implan Gigi & Prostetik",
+    speciality_id: "Implan gigi, gigi tiruan lepasan, dan smile makeover.",
+    description_id:
+      "Sebagai prostodontis dengan pengalaman 11 tahun, drg. Melisa memadukan keunggulan akademis dengan pendekatan yang penuh empati. Beliau juga dosen aktif di Universitas Prof. Dr. Moestopo (B). Beliau telah berhasil menangani lebih dari 200 kasus gigi tiruan. Gaya klinisnya tenang dan detail, sehingga mampu membangun kepercayaan pasien yang menjalani perawatan prostetik atau implan yang kompleks.",
     schedule: [
       {
         day: "Monday",
@@ -221,6 +242,10 @@ export const doctors = [
     ],
     description:
       "Currently pursuing her specialist degree in Conservative Dentistry, drg. Ovelia offers a thoughtful and research-driven approach to restorative and endodontic care. She is detail-oriented and academically engaged, often attending international courses to deepen her clinical knowledge. Patients appreciate her patience, clarity, and commitment to excellence.",
+    excrept_id: "Dokter Gigi Restorasi Estetik & Endodonti",
+    speciality_id: "Restorasi estetik, perawatan endodonti.",
+    description_id:
+      "Saat ini sedang menempuh pendidikan spesialis Konservasi Gigi, drg. Ovelia menawarkan pendekatan yang cermat dan berbasis riset dalam perawatan restoratif dan endodonti. Beliau detail dan aktif secara akademis, kerap mengikuti kursus internasional untuk memperdalam pengetahuan klinisnya. Pasien menghargai kesabaran, kejelasan, dan komitmennya terhadap keunggulan.",
     schedule: [
       {
         day: "Saturday",
@@ -246,6 +271,11 @@ export const doctors = [
     ],
     description:
       "Currently advancing her training in Conservative Dentistry, drg. Florencia practices with precision and clinical discipline. Her interests include endodontic treatment and adhesive restorations, supported by her participation in international symposium and seminars. She is highly regarded for her calm presence and clear, informative style in patient interactions.",
+    excrept_id: "Dokter Gigi Restorasi Estetik & Endodonti",
+    speciality_id:
+      "Perawatan endodonti, restorasi estetik, dan pencabutan gigi.",
+    description_id:
+      "Saat ini sedang memperdalam pelatihan di bidang Konservasi Gigi, drg. Florencia berpraktik dengan presisi dan disiplin klinis. Minatnya mencakup perawatan endodonti dan restorasi adhesif, didukung partisipasinya dalam simposium dan seminar internasional. Beliau sangat dihargai atas ketenangannya serta gaya komunikasinya yang jelas dan informatif kepada pasien.",
     schedule: [
       {
         day: "Saturday",
@@ -270,6 +300,11 @@ export const doctors = [
     education: ["General Dentist - Universitas Brawijaya (2022)"],
     description:
       "Drg. Jazila is known for her gentle manner and deep appreciation for natural aesthetics. She focuses on direct restorations and prosthetics, guided by a strong foundation in biomimetic dentistry. Her approach is quiet yet confident, with a dedication to producing refined, harmonious results that suit each individual patient’s features and needs.",
+    excrept_id: "Dokter Gigi Umum & Restorasi Estetik",
+    speciality_id:
+      "Smile makeover, perawatan endodonti, serta prostetik lepasan & cekat.",
+    description_id:
+      "Drg. Jazila dikenal karena pembawaannya yang lembut dan apresiasinya yang mendalam terhadap estetika alami. Beliau berfokus pada restorasi direk dan prostetik, berlandaskan fondasi yang kuat dalam kedokteran gigi biomimetik. Pendekatannya tenang namun percaya diri, dengan dedikasi menghasilkan hasil yang halus dan harmonis sesuai fitur dan kebutuhan tiap pasien.",
     schedule: [
       {
         day: "Wednesday",
@@ -302,6 +337,11 @@ export const doctors = [
     education: ["General Dentist - Universitas Mahasaraswati Denpasar (2020)"],
     description:
       "Drg. Trisia is a dedicated general dentist with a keen interest in smile makeovers, root canal treatment, and prosthetic restorations. Her clinical style is attentive and methodical, supported by active participation in numerous national dental courses. She is known for her warm and communicative nature, ensuring each patient feels heard, informed, and well cared for.",
+    excrept_id: "Dokter Gigi Umum & Restorasi Estetik",
+    speciality_id:
+      "Smile makeover, perawatan saluran akar, prostetik cekat dan lepasan.",
+    description_id:
+      "Drg. Trisia adalah dokter gigi umum yang berdedikasi dengan minat khusus pada smile makeover, perawatan saluran akar, dan restorasi prostetik. Gaya klinisnya penuh perhatian dan metodis, didukung partisipasi aktif dalam berbagai kursus kedokteran gigi nasional. Beliau dikenal hangat dan komunikatif, memastikan setiap pasien merasa didengar, terinformasi, dan terawat dengan baik.",
     schedule: [
       {
         day: "Tuesday",
@@ -338,6 +378,10 @@ export const doctors = [
     education: ["General Dentist - Universitas Andalas (2021)"],
     description:
       "Drg. Fikri brings a steady and careful approach to aesthetic restorations and extractions. With advanced training in crown and bridge techniques, endodontics, and laser dentistry, he is dedicated to providing accurate, modern care. Known for his composure and meticulous technique, he ensures each treatment is delivered with both precision and empathy.",
+    excrept_id: "Dokter Gigi Umum & Restorasi Estetik",
+    speciality_id: "Restorasi estetik, smile makeover, pencabutan gigi.",
+    description_id:
+      "Drg. Fikri menghadirkan pendekatan yang mantap dan cermat dalam restorasi estetik dan pencabutan gigi. Dengan pelatihan lanjutan dalam teknik crown dan bridge, endodonti, serta laser dentistry, beliau berdedikasi memberikan perawatan yang akurat dan modern. Dikenal atas ketenangan dan tekniknya yang teliti, beliau memastikan setiap perawatan dilakukan dengan presisi sekaligus empati.",
     schedule: [
       {
         day: "Wednesday",

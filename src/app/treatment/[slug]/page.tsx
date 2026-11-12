@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const index = treatments.findIndex((treatment) => treatment.slug === slug);
 
     return metaData({
-        title: `${treatment.title} Treatment | Onyx Dental Center`,
-        description: `Premium Aesthetic Dental Treatment ${treatment.title} near Jakarta, Bogor, Depok, Tangerang, and Bekasi.`,
+        title: `${treatment.title} in Karawaci, Tangerang | Onyx Dental Center`,
+        description: `${treatment.excrept} ${treatment.title} at Onyx Dental Center, Karawaci, Tangerang.`,
         images: [{ url: `/assets/images/treatment/treatment-image-${index + 1}.webp` }],
         path: `/treatment/${slug}`,
     });
@@ -88,7 +88,7 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
             <div className="md:w-1/2 z-30">
                 <Image
                     src={`/assets/images/treatment/treatment-detail-${index + 1}.webp`}
-                    alt="Banner Proven Result"
+                    alt={`${treatment?.title} treatment at Onyx Dental Center`}
                     width={1920}
                     height={1080}
                     className="z-30 w-full h-[636px] object-cover"
@@ -98,13 +98,13 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
 
         {treatment?.result?.length ? <section className="p-7 md:p-0 w-full flex justify-center">
             <div className="w-full flex flex-col md:max-w-5xl xl:max-w-6xl">
-                <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Results</h1>
+                <h2 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Results</h2>
                 <div className="flex flex-wrap flex-col md:flex-row justify-between gap-6 md:gap-8 mb-6 md:mb-12">
                     {treatment?.result && treatment?.result.map((item, index) => (
                         <div className="md:w-[31%]" key={index}>
                             <Image
                                 src={`/assets/images/treatment/result/${slug}-${index + 1}.webp`}
-                                alt="section1"
+                                alt={`${treatment?.title} before and after: ${item.description}`}
                                 width={500}
                                 height={500}
                                 className="w-full"

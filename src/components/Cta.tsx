@@ -40,14 +40,14 @@ async function Cta(props: CtaProps) {
                 <div className='md:w-1/2'>
                     <Image
                         src={isDynamic ? image : `/assets/images/${image}-desktop.webp`}
-                        alt={'cta'}
+                        alt="Onyx Dental Center treatment room"
                         width={1280}
                         height={720}
                         className={cn('w-full hidden md:block', classNameImage)}
                     />
                     <Image
                         src={isDynamic ? image : `/assets/images/${image}-mobile.webp`}
-                        alt={'cta'}
+                        alt="Onyx Dental Center treatment room"
                         width={1280}
                         height={720}
                         className={cn('w-full md:hidden', classNameImage)}

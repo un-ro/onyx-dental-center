@@ -8,7 +8,7 @@ declare global {
     }
 }
 
-export default function PixelProviders({ children }: { children: React.ReactNode }) {
+export default function PixelProviders() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
@@ -18,5 +18,5 @@ export default function PixelProviders({ children }: { children: React.ReactNode
         }
     }, [pathname, searchParams]);
 
-    return <>{children}</>;
+    return null;
 }

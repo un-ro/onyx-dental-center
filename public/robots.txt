@@ -2,8 +2,5 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://onyxdentalcenter.id
-
 # Sitemaps
-Sitemap: https://onyxdentalcenter.id/api/sitemap
+Sitemap: https://onyxdentalcenter.id/sitemap.xml

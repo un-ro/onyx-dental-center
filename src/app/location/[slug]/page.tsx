@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import HtmlLang from "@/components/HtmlLang";
 
 const baseUrl = "https://onyxdentalcenter.id";
 const whatsappUrl = "https://wa.me/6281286632240";
@@ -33,6 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       languages: {
         [page.locale === "en" ? "en-ID" : "id-ID"]: `/location/${page.slug}`,
         [page.locale === "en" ? "id-ID" : "en-ID"]: `/location/${page.alternateSlug}`,
+        "x-default": "/location/dental-near-karawaci",
       },
     },
     openGraph: {
@@ -53,6 +55,7 @@ export default async function LocationDetail({ params }: PageProps) {
 
   return (
     <PageWrapper className="min-h-screen bg-custom-primary text-custom-text-color">
+      {page.locale === "id" && <HtmlLang lang="id" />}
       <section className="w-full bg-custom-white-accent">
         <div className="mx-auto grid w-full gap-8 px-7 py-16 md:max-w-5xl md:grid-cols-[1fr_420px] md:items-center md:px-0 md:py-24 xl:max-w-6xl">
           <div>

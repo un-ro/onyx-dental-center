@@ -5,7 +5,7 @@ import { metaData } from '@/lib/utils/metadata';
 import { Metadata } from 'next';
 import Image from 'next/image';
 // import { cache } from "react";
-import JsonLd from '@/lib/components/JsonLd';
+import BlogPostingJsonLd from '@/lib/components/JsonLd';
 import { format } from 'date-fns';
 // import Icons from '@/components/Icon';
 // import Link from 'next/link';
@@ -13,7 +13,7 @@ import { id } from 'date-fns/locale';
 import { PageWrapper } from '@/components';
 import { getBlogsBySlug } from '@/lib/api';
 import Cta from '@/components/Cta';
-import Head from 'next/head';
+import HtmlLang from '@/components/HtmlLang';
 import TableOfContents from '@/components/TableOfContents';
 import BlogContent from '@/components/BlogContent';
 
@@ -22,16 +22,18 @@ export const dynamicParams = true; // Allow dynamic params
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const slug = (await params).slug
-    const blog = await getBlogsBySlug(slug);
-    // const blog = blogs.map((m) => ({ ...m, content })).find((e) => e.slug === slug);
-    if (!blog) return {};
+    let blog;
+    try {
+        blog = await getBlogsBySlug(slug);
+    } catch {
+        notFound();
+    }
 
     return metaData({
         title: blog.data.title,
         description: blog.data.excerpt,
         images: blog.data.thumbnailUrl ? [{ url: blog.data.thumbnailUrl }] : [],
         path: `/blogs/${blog.data.slug}`,
-        language: blog.data.language,
     });
 }
 
@@ -53,16 +55,10 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
     const language = blog.data.language ?? 'id-id';
     const author = blog.data.author.name ?? 'Onyx Editorial Team';
 
-    if (!blog) return notFound();
-
     return (
         <>
-            <Head>
-                <link rel="alternate" hrefLang={language} href={`https://onyxdentalcenter.id/blogs/${slug}`} />
-            </Head>
-            {/* per-page <html lang>; App Router can't override root layout server-side without dynamic layout */}
-            <script dangerouslySetInnerHTML={{ __html: `document.documentElement.lang=${JSON.stringify(language)}` }} />
-            <JsonLd schemaType='BlogPosting' data={blog.data} />
+            <HtmlLang lang={language === 'id-id' ? 'id' : 'en'} />
+            <BlogPostingJsonLd post={blog.data} />
             <PageWrapper className='bg-custom-primary'>
                 <section className="w-full flex justify-center px-4 py-8 md:py-20">
                     <div className='w-full md:max-w-3xl xl:max-w-4xl'>

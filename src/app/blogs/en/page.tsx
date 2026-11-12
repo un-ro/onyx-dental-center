@@ -21,8 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
         images: [{ url: '/assets/images/home-section4-3.webp' }],
         path: '/blogs/en',
         languageAlternates: {
-            'en': 'https://onyxdentalcenter.id/blogs/en',
-            'id': 'https://onyxdentalcenter.id/blogs/id',
+            'en-ID': 'https://onyxdentalcenter.id/blogs/en',
+            'id-ID': 'https://onyxdentalcenter.id/blogs/id',
             'x-default': 'https://onyxdentalcenter.id/blogs/en',
         },
     });
@@ -69,8 +69,9 @@ export default async function BlogListPage() {
                                     <Image
                                         src={e.thumbnailUrl}
                                         alt={e.title}
-                                        width={200}
-                                        height={200}
+                                        width={400}
+                                        height={250}
+                                        sizes="(min-width:768px) 31vw, 100vw"
                                         className='w-full h-[250px] object-cover'
                                     />
                                     <div className='w-full h-full flex flex-col justify-between p-4'>

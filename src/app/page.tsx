@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import { PageWrapper } from "@/components";
 import Cta from "@/components/Cta";
 import { getSettings } from "@/lib/api";
@@ -19,8 +17,8 @@ import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
-    title: 'Onyx Dental Center',
-    description: "Discover Jakarta's premier Smile Studio. Onyx Dental's dentist specializes in veneers, Invisalign, and smile makeovers. Book your consultation.",
+    title: 'Klinik Gigi Karawaci: Veneer, Invisalign & Smile Makeover | Onyx Dental Center',
+    description: 'Onyx Dental Center, klinik gigi estetik di Karawaci, Tangerang. Veneer, Invisalign, smile makeover & implan gigi oleh dokter gigi berpengalaman. Buka setiap hari 09.00–20.00.',
     images: [{ url: '/assets/images/home-section1.webp' }],
     path: '/',
   });

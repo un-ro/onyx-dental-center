@@ -7,9 +7,22 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/blogs",
+        destination: "/blogs/en",
+        permanent: true,
+      },
+      {
+        source: "/location/klinik-gigi-karawaci",
+        destination: "/location/klinik-gigi-terdekat-karawaci",
+        permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
         source: "/sitemap.xml",
         destination: "/api/sitemap",
-        permanent: true,
       },
     ];
   },
@@ -44,17 +57,19 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    unoptimized: true,
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "http",
         hostname: "localhost",
-        // port: '',
-        // pathname: '/u/**',
       },
       {
         protocol: "https",
         hostname: "placehold.co",
+      },
+      {
+        protocol: "https",
+        hostname: "api.onyxdentalcenter.id",
       },
     ],
   },

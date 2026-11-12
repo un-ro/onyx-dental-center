@@ -35,7 +35,7 @@ export default async function RootLayout({
   const pixelId = 3800209303610125;
 
   return (
-    <html lang="id">
+    <html lang="en">
       <head>
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
         <script
@@ -48,11 +48,13 @@ export default async function RootLayout({
                   "@type": ["Dentist", "LocalBusiness"],
                   "@id": "https://onyxdentalcenter.id/#business",
                   "name": "Onyx Dental Center",
-                  "description": "Jakarta's premier smile studio specializing in veneers, Invisalign, and smile makeovers.",
+                  "description": "Klinik gigi estetik di Karawaci, Tangerang: veneer, Invisalign, smile makeover, dan implan gigi.",
                   "url": "https://onyxdentalcenter.id/",
                   "logo": "https://onyxdentalcenter.id/logo.webp",
                   "image": "https://onyxdentalcenter.id/assets/images/home-section1.webp",
                   "telephone": "+62-812-8663-2240",
+                  "areaServed": ["Karawaci","Lippo Karawaci","Kelapa Dua","Gading Serpong","Tangerang","Jakarta"],
+                  "hasMap": "https://maps.app.goo.gl/5AqjUPYF1gZtmtuh9",
                   "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Ruko Asia Millenium, Jl. Taman Permata No.65 Blok C-1",
@@ -108,15 +110,7 @@ export default async function RootLayout({
                   "@type": "WebSite",
                   "@id": "https://onyxdentalcenter.id/#website",
                   "url": "https://onyxdentalcenter.id/",
-                  "name": "Onyx Dental Center",
-                  "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": {
-                      "@type": "EntryPoint",
-                      "urlTemplate": "https://onyxdentalcenter.id/blogs?q={search_term_string}"
-                    },
-                    "query-input": "required name=search_term_string"
-                  }
+                  "name": "Onyx Dental Center"
                 }
               ]
             })
@@ -187,12 +181,11 @@ fbq('track', 'PageView');
         </noscript>
         <Navbar settings={settings.data} />
         <main className="min-h-screen">
-          <Suspense fallback={null}>
-            <PixelProviders>
-              {children}
-            </PixelProviders>
-          </Suspense>
+          {children}
         </main>
+        <Suspense fallback={null}>
+          <PixelProviders />
+        </Suspense>
         <Footer settings={settings.data} />
         <Analytics />
         <SpeedInsights />

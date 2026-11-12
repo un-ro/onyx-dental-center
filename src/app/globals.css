@@ -201,3 +201,11 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes page-fade {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+.animate-page-fade {
+  animation: page-fade .8s ease-in-out both;
+}

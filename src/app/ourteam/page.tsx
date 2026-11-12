@@ -14,6 +14,11 @@ export async function generateMetadata(): Promise<Metadata> {
     description: 'Profesional Aesthetic dentists near you. Nearby dentists in Jakarta, Tangerang, Bekasi, BSD, Alam Sutera, Serpong, Bintaro, and Puri Indah.',
     images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
     path: '/ourteam',
+    languageAlternates: {
+      'en-ID': 'https://onyxdentalcenter.id/ourteam',
+      'id-ID': 'https://onyxdentalcenter.id/dokter-gigi',
+      'x-default': 'https://onyxdentalcenter.id/ourteam',
+    },
   });
 }
 
@@ -35,6 +40,7 @@ export default async function OurTeam() {
           <div className="w-full md:max-w-5xl xl:max-w-6xl z-20 md:mb-[12vh]">
             <div className="p-7 md:p-0 md:max-w-[55%] flex flex-col h-full text-white">
               <h1 className="text-4xl text-[40px] mb-2 md:text-6xl md:leading-[76px] font-eb-garamond font-bold">Our Team</h1>
+              <p className="mb-2"><Link href="/dokter-gigi" hrefLang="id" className="underline text-sm">Bahasa Indonesia</Link></p>
               <p>A smile is more than aesthetics. It’s emotion, identity, and it’s our passion to design it.</p>
             </div>
           </div>
@@ -48,7 +54,7 @@ export default async function OurTeam() {
               (index <= 2) && <div className="bg-white md:w-[31%] drop-shadow-md" key={index}>
                 <Image
                   src={`/assets/images/doctor/doctor-person-${index + 1}.webp`}
-                  alt={`doctor-${item.slug}`}
+                  alt={`${item.name} – ${item.excrept}`}
                   width={500}
                   height={500}
                   className="w-full"
@@ -68,7 +74,7 @@ export default async function OurTeam() {
               (index > 2) && <div className="bg-white drop-shadow-md" key={item.slug}>
                 <Image
                   src={`/assets/images/doctor/doctor-person-${index + 1}.webp`}
-                  alt={`doctor-${item.slug}`}
+                  alt={`${item.name} – ${item.excrept}`}
                   width={500}
                   height={500}
                   className="w-full"

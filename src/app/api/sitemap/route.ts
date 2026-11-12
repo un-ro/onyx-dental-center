@@ -10,7 +10,7 @@ type SitemapUrl = {
   loc: string;
   changefreq: string;
   priority: number;
-  lastmod: string;
+  lastmod?: string;
   images?: SitemapImage[];
 };
 
@@ -49,7 +49,6 @@ const treatmentImages: Record<string, string> = {
 
 export async function GET() {
   const now = Date.now();
-  const lastMod = new Date().toISOString();
 
   // 10 seconds cache in dev, 1 hour in production
   const cacheTime = process.env.NODE_ENV === 'development' ? 10000 : 1000 * 60 * 60;
@@ -78,13 +77,13 @@ export async function GET() {
       ];
 
       const allUrls: Array<string> = [
+        "location",
         "ourteam",
         "dokter-gigi",
         "treatment",
         "experience",
         "philosophy",
         "proven-result",
-        "blogs",
         "blogs/en",
         "blogs/id",
         ...doctorUrls,
@@ -97,7 +96,6 @@ export async function GET() {
           loc: `${baseUrl}${url}`,
           changefreq: "weekly",
           priority: 0.7,
-          lastmod: lastMod,
         };
         if (url === "treatment") {
           entry.images = [{ loc: `${assetsBase}/treatment/treatment-banner.webp`, caption: "Onyx Dental Center — Perawatan Gigi Jakarta" }];
@@ -112,7 +110,7 @@ export async function GET() {
           loc: `${baseUrl}blogs/${blog.slug}`,
           changefreq: "weekly",
           priority: 0.8,
-          lastmod: blog.published_at ? new Date(blog.published_at).toISOString() : lastMod,
+          lastmod: (blog.updated_at ?? blog.published_at) ? new Date(blog.updated_at ?? blog.published_at!).toISOString() : undefined,
           images: blog.thumbnailUrl ? [{ loc: blog.thumbnailUrl, caption: blog.title }] : undefined,
         })) || [];
 
@@ -121,7 +119,6 @@ export async function GET() {
           loc: baseUrl,
           changefreq: "weekly",
           priority: 0.7,
-          lastmod: lastMod,
           images: [
             { loc: `${assetsBase}/home-section1.webp`, caption: "Onyx Dental Center — Klinik Gigi Jakarta" },
             { loc: `${assetsBase}/home-section4-3.webp`, caption: "Onyx Dental Center — Fasilitas Klinik Gigi" },
@@ -146,7 +143,7 @@ export async function GET() {
             (url) => `
           <url>
             <loc>${escapeXml(url.loc)}</loc>
-            ${url?.lastmod ? `<lastmod>${escapeXml(url.lastmod)}</lastmod>` : `<lastmod>${escapeXml(lastMod)}</lastmod>`}
+            ${url?.lastmod ? `<lastmod>${escapeXml(url.lastmod)}</lastmod>` : ""}
             <changefreq>${escapeXml(url.changefreq)}</changefreq>
             <priority>${escapeXml(url.priority)}</priority>${renderImages(url.images)}
           </url>`

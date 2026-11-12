@@ -56,7 +56,7 @@ export default async function Experience() {
           <div className={cn("md:w-[50%] xl:w-[48%]")}>
             <Image
               src={`/assets/images/experience/experience-image-1.webp`}
-              alt="experience-image-1"
+              alt="The Onyx Treatment Room"
               width={500}
               height={500}
               className="w-full md:h-[454px] object-cover"
@@ -65,14 +65,14 @@ export default async function Experience() {
           <div className={cn("md:w-[25%] xl:w-[24%] flex flex-col gap-4 md:gap-0 justify-between")}>
             <Image
               src={`/assets/images/experience/experience-image-2.webp`}
-              alt="experience-image-2"
+              alt="The Smile Studio"
               width={500}
               height={500}
               className="w-full md:h-[215px] object-cover"
             />
             <Image
               src={`/assets/images/experience/experience-image-3.webp`}
-              alt="experience-image-3"
+              alt="Reception Atelier"
               width={500}
               height={500}
               className="w-full md:h-[215px] object-cover"
@@ -95,7 +95,7 @@ export default async function Experience() {
           <div className={cn("md:w-[25%] xl:w-[24%]")}>
             <Image
               src={`/assets/images/experience/experience-image-4.webp`}
-              alt="experience-image-4"
+              alt="Refreshments Bar"
               width={500}
               height={500}
               className="w-full md:h-[454px] object-cover"
@@ -104,7 +104,7 @@ export default async function Experience() {
           <div className={cn("md:w-[25%] xl:w-[24%]")}>
             <Image
               src={`/assets/images/experience/experience-image-5.webp`}
-              alt="experience-image-5"
+              alt="Aesthetic Lounge"
               width={500}
               height={500}
               className="w-full md:h-[454px] object-cover"
@@ -113,7 +113,7 @@ export default async function Experience() {
           <div className={cn("md:w-[25%] xl:w-[24%]")}>
             <Image
               src={`/assets/images/experience/experience-image-6.webp`}
-              alt="experience-image-6"
+              alt="Powder Room"
               width={500}
               height={500}
               className="w-full md:h-[454px] object-cover"
@@ -130,7 +130,7 @@ export default async function Experience() {
           <div className={cn("md:w-[50%] xl:w-[48%]")}>
             <Image
               src={`/assets/images/experience/experience-image-7.webp`}
-              alt="experience-image-7"
+              alt="Kids Corner"
               width={500}
               height={500}
               className="w-full md:h-[454px] object-cover"
@@ -139,14 +139,14 @@ export default async function Experience() {
           <div className={cn("md:w-[25%] xl:w-[24%] flex flex-col gap-4 md:gap-0 justify-between")}>
             <Image
               src={`/assets/images/experience/experience-image-8.webp`}
-              alt="experience-image-8"
+              alt="Advanced Technology"
               width={500}
               height={500}
               className="w-full md:h-[215px] object-cover"
             />
             <Image
               src={`/assets/images/experience/experience-image-9.webp`}
-              alt="experience-image-9"
+              alt="Onyx Dental Center interior, Karawaci"
               width={500}
               height={500}
               className="w-full md:h-[215px] object-cover"
@@ -168,7 +168,7 @@ export default async function Experience() {
           <div className={cn("md:w-[25%] xl:w-[24%]")}>
             <Image
               src={`/assets/images/experience/experience-image-10.webp`}
-              alt="experience-image-10"
+              alt="Onyx Dental Center interior, Karawaci"
               width={500}
               height={500}
               className="w-full md:h-[455px] object-cover"
@@ -177,7 +177,7 @@ export default async function Experience() {
           <div className={cn("md:w-[50%] xl:w-[48%]")}>
             <Image
               src={`/assets/images/experience/experience-image-11.webp`}
-              alt="experience-image-11"
+              alt="Onyx Dental Center interior, Karawaci"
               width={500}
               height={500}
               className="w-full md:h-[454px] object-cover"

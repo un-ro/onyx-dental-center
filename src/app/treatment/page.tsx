@@ -81,13 +81,13 @@ export default async function Treatment() {
 
       <section className="hidden w-full md:flex justify-center">
         <div className="w-full flex flex-col md:max-w-5xl xl:max-w-6xl">
-          <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Smile Transformations</h1>
+          <h2 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-12">The Smile Transformations</h2>
           <div className="flex flex-wrap flex-col md:flex-row justify-between gap-6 md:gap-8 mb-6 md:mb-12">
             {list.map((item, index) => (
               <div className="md:w-[31%]" key={index}>
                 <Image
                   src={item.image}
-                  alt="section1"
+                  alt={item.description}
                   width={500}
                   height={500}
                   className="w-full"

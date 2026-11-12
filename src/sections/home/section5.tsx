@@ -9,19 +9,19 @@ export default async function Section5() {
                 <div className="w-full md:w-1/2 h-full flex flex-col justify-center text-custom-text-color p-7 md:py-0 md:pl-[12%]">
                     <Image
                         src="/assets/images/home-section5-1.webp"
-                        alt="section1"
+                        alt="Pediatric dental care at Onyx Dental Center"
                         width={500}
                         height={500}
                         className="w-[65%] md:w-[40%] h-full object-cover mb-4"
                     />
-                    <h3 className="md:leading-[130%] text-2xl md:text-4xl font-eb-garamond font-semibold md:mb-6">
+                    <h2 className="md:leading-[130%] text-2xl md:text-4xl font-eb-garamond font-semibold md:mb-6">
                         Making Every Visit a Happy Experience for Our Little Patients
-                    </h3>
+                    </h2>
                 </div>
                 <div className="relative w-full md:w-1/2 h-full">
                     <Image
                         src="/assets/images/home-section5-2.webp"
-                        alt="section1"
+                        alt="Child patient smiling at Onyx kids corner"
                         width={500}
                         height={500}
                         className="w-full h-full object-cover"

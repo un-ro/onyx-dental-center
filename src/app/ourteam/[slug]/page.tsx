@@ -25,6 +25,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: 'Professional Aesthetic dentists near you. Nearby dentists in Jakarta, Tangerang, Bekasi, BSD, Alam Sutera, Serpong, Bintaro, and Puri Indah.',
             images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
             path: '/ourteam',
+            languageAlternates: {
+                'en-ID': 'https://onyxdentalcenter.id/ourteam',
+                'id-ID': 'https://onyxdentalcenter.id/dokter-gigi',
+                'x-default': 'https://onyxdentalcenter.id/ourteam',
+            },
         });
     }
 
@@ -35,6 +40,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         description: `Meet ${doctor.name}, experienced ${doctor.speciality.toLowerCase()} with ${doctor.year_experience} years of experience. Expert in ${doctor.speciality}. Book your appointment at Onyx Dental Center - serving Jakarta, Tangerang, and Karawaci areas.`,
         images: [{ url: `/assets/images/doctor/doctor-detail-${index + 1}.webp` }],
         path: `/ourteam/${slug}`,
+        languageAlternates: {
+            'en-ID': `https://onyxdentalcenter.id/ourteam/${slug}`,
+            'id-ID': `https://onyxdentalcenter.id/dokter-gigi/${slug}`,
+            'x-default': `https://onyxdentalcenter.id/ourteam/${slug}`,
+        },
     });
 }
 
@@ -85,13 +95,13 @@ export default async function DetailDoctor({ params }: { params: Promise<{ slug:
             <div className="grid grid-cols-1 md:grid-cols-2 mb-14">
                 <Image
                     src={`/assets/images/doctor/doctor-detail-${index + 1}.webp`}
-                    alt={`doctor-${slug}`}
+                    alt={doctor ? `${doctor.name} – ${doctor.excrept}` : `doctor-${slug}`}
                     width={500}
                     height={500}
                     className="w-full"
                 />
                 <div className="flex flex-col justify-between bg-custom-white-accent p-10">
-                    <h2 className="leading-[130%] text-3xl font-eb-garamond font-semibold mb-4" >Profile</h2>
+                    <h2 className="leading-[130%] text-3xl font-eb-garamond font-semibold mb-4" >Profile <Link href={`/dokter-gigi/${slug}`} hrefLang="id" className="underline text-sm font-helvetica font-normal align-middle ml-2">Bahasa Indonesia</Link></h2>
 
                     <div>
                         <div className='mb-4'>

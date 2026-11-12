@@ -63,7 +63,7 @@ export default async function Philosophy() {
               <div className="flex flex-col justify-center items-center md:w-[31%]" key={index}>
                 <Image
                   src={`/assets/images/philosophy/icon-${index + 1}.svg`}
-                  alt={`icon-${index + 1}`}
+                  alt={item.title}
                   width={500}
                   height={500}
                   className="w-[80px] mb-6"

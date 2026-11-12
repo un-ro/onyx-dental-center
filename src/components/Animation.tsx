@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 // import Footer from './Footer';
 
 type FadeInFadeOutTextProps = {
@@ -102,31 +102,10 @@ function StaggerItem({ children, className = '' }: { children: React.ReactNode, 
 }
 
 const PageWrapper = ({ children, className = '' }: { children: React.ReactNode, className?: string }) => {
-    const pathname = usePathname();
     return (
-        <AnimatePresence mode="wait">
-            <motion.main
-                className={className}
-                key={pathname}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, ease: 'easeInOut' }}
-
-            // initial={{ opacity: 0, y: 10 }}
-            // animate={{ opacity: 1, y: 0 }}
-            // exit={{ opacity: 0, y: -10 }}
-            // transition={{ duration: 0.4 }}
-
-            // initial={{ opacity: 0, y: 10 }}
-            // animate={{ opacity: 1, y: 0 }}
-            // exit={{ opacity: 0, y: -10 }}
-            // transition={{ duration: 0.4, ease: 'easeInOut' }}
-            // style={{ position: 'absolute', width: '100%' }}
-            >
-                {children}
-            </motion.main>
-            {/* <Footer /> */}
-        </AnimatePresence>
+        <main className={cn(className, 'animate-page-fade')}>
+            {children}
+        </main>
     );
 };
 

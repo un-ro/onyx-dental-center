@@ -92,6 +92,7 @@ export default function CustomCarousel() {
                                     alt={item.title}
                                     width={1000}
                                     height={1000}
+                                    sizes="100vw"
                                     className='z-10 w-full h-[50vh] md:h-[825px] object-cover md:object-none'
                                 />
                                 {/* overlay */}
@@ -143,8 +144,9 @@ export default function CustomCarousel() {
                             className={`w-[23%] ${idx === selectedIndex ? 'border-2 border-black' : ''}`}
                             onClick={() => emblaApi?.scrollTo(idx)}
                             src={_.image}
-                            width={100}
-                            height={100}
+                            width={288}
+                            height={165}
+                            sizes="(min-width:768px) 23vw, 0px"
                             alt={_.title}
                         />
 

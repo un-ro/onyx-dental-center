@@ -11,6 +11,10 @@ export default async function Footer({ settings }: { settings: Setting }) {
             href: "/ourteam",
         },
         {
+            label: "Dokter Gigi Karawaci",
+            href: "/dokter-gigi",
+        },
+        {
             label: "Our Expertise",
             href: "/treatment",
         },
@@ -24,7 +28,7 @@ export default async function Footer({ settings }: { settings: Setting }) {
         },
         {
             label: "Blog",
-            href: "/blogs",
+            href: "/blogs/en",
         },
         {
             label: "Near / Area Served",
@@ -40,7 +44,7 @@ export default async function Footer({ settings }: { settings: Setting }) {
             <div className='flex flex-col md:flex-row md:mb-14'>
                 <div className='w-full grid grid-cols-1 md:grid-cols-4 mb-6 md:mb-0 gap-6 items-start justify-between'>
                     <Link href="/" className="flex mt-2 min-h-[10vh]">
-                        <Image src="/logo-footer.svg" alt="logo" width={24} height={24} className="text-white w-[60%] md:w-40" />
+                        <Image src="/logo-footer.svg" alt="Onyx Dental Center" width={24} height={24} className="text-white w-[60%] md:w-40" />
                         <span className="sr-only">logo</span>
                     </Link>
                     <div className="grid md:grid-cols-1 text-white font-bold">

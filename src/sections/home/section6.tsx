@@ -40,11 +40,11 @@ export default async function Section6() {
     return (
         <section className="flex justify-center p-7 md:py-20">
             <div className="w-full flex flex-col md:max-w-5xl xl:max-w-6xl">
-                <h1 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-16">What Our Patients Say</h1>
+                <h2 className="font-eb-garamond font-semibold text-custom-text-color text-2xl md:text-4xl mb-6 md:mb-16">What Our Patients Say</h2>
                 <div className="flex flex-wrap flex-col md:flex-row justify-between gap-6 md:gap-8 mb-6 md:mb-12">
                     {list.map((item, index) => (
                         <div className="md:w-[31%] md:mb-2" key={index}>
-                            <h2 className="leading-[130%] text-lg md:text-2xl font-semibold text-custom-text-color">{item.name}</h2>
+                            <h3 className="leading-[130%] text-lg md:text-2xl font-semibold text-custom-text-color">{item.name}</h3>
                             <div className='flex'>
                                 {Array.from({ length: 5 }).map((_, index) => (
                                     <Icons key={index} name="star" className="w-6 h-6 text-custom-brown" />

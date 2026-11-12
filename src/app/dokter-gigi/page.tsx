@@ -7,6 +7,7 @@ import { metaData } from "@/lib/utils/metadata";
 import { doctors } from "@/lib/data/doctor";
 import Link from "next/link";
 import Icons from "@/components/Icon";
+import HtmlLang from "@/components/HtmlLang";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaData({
@@ -14,7 +15,11 @@ export async function generateMetadata(): Promise<Metadata> {
     description: 'Temui dokter gigi profesional dan terbaik di Karawaci, Tangerang, untuk perawatan estetik, veneer, implant, orthodontic, dan smile makeover di Onyx Dental Center.',
     images: [{ url: '/assets/images/doctor/doctor-banner.webp' }],
     path: '/dokter-gigi',
-    language: 'id-id',
+    languageAlternates: {
+      'id-ID': 'https://onyxdentalcenter.id/dokter-gigi',
+      'en-ID': 'https://onyxdentalcenter.id/ourteam',
+      'x-default': 'https://onyxdentalcenter.id/ourteam',
+    },
   });
 }
 
@@ -22,6 +27,7 @@ export default async function OurTeam() {
 
   return (
     <PageWrapper className="min-h-screen">
+      <HtmlLang lang="id" />
       <section className="relative w-full overflow-hidden">
         <Image
           src="/assets/images/doctor/doctor-banner.webp"
@@ -36,6 +42,7 @@ export default async function OurTeam() {
           <div className="w-full md:max-w-5xl xl:max-w-6xl z-20 md:mb-[12vh]">
             <div className="p-7 md:p-0 md:max-w-[55%] flex flex-col h-full text-white">
               <h1 className="text-4xl text-[40px] mb-2 md:text-6xl md:leading-[76px] font-eb-garamond font-bold">Dokter Gigi Terbaik di Karawaci</h1>
+              <p className="mb-2"><Link href="/ourteam" hrefLang="en" className="underline text-sm">English</Link></p>
               <p>Temui tim dokter gigi Onyx Dental Center yang berpengalaman merancang senyum sehat, natural, dan percaya diri.</p>
             </div>
           </div>
@@ -49,14 +56,14 @@ export default async function OurTeam() {
               (index <= 2) && <div className="bg-white md:w-[31%] drop-shadow-md" key={index}>
                 <Image
                   src={`/assets/images/doctor/doctor-person-${index + 1}.webp`}
-                  alt={`doctor-${item.slug}`}
+                  alt={`${item.name} – ${item.excrept_id}`}
                   width={500}
                   height={500}
                   className="w-full"
                 />
                 <div className="flex flex-col gap-3 p-4">
                   <h5 className="leading-[150%] text-lg font-bold text-custom-text-color">{item.name}</h5>
-                  <p className="text-custom-text-color-2 mb-2">{item.excrept}</p>
+                  <p className="text-custom-text-color-2 mb-2">{item.excrept_id}</p>
                   <Link className="text-sm text-custom-text-color leading-[130%] font-semibold flex gap-2 items-center" href={`/dokter-gigi/${item.slug}`}>
                     Lihat profil & jadwal <Icons name="arrow-long-right" className="w-4 h-4 text-custom-text-color" />
                   </Link>
@@ -69,14 +76,14 @@ export default async function OurTeam() {
               (index > 2) && <div className="bg-white drop-shadow-md" key={item.slug}>
                 <Image
                   src={`/assets/images/doctor/doctor-person-${index + 1}.webp`}
-                  alt={`doctor-${item.slug}`}
+                  alt={`${item.name} – ${item.excrept_id}`}
                   width={500}
                   height={500}
                   className="w-full"
                 />
                 <div className="flex flex-col gap-3 p-4">
                   <h5 className="leading-[150%] text-lg font-bold text-custom-text-color">{item.name}</h5>
-                  <p className="text-custom-text-color-2 mb-2">{item.excrept}</p>
+                  <p className="text-custom-text-color-2 mb-2">{item.excrept_id}</p>
                   <Link className="text-sm text-custom-text-color leading-[130%] font-semibold flex gap-2 items-center" href={`/dokter-gigi/${item.slug}`}>
                     Lihat profil & jadwal <Icons name="arrow-long-right" className="w-4 h-4 text-custom-text-color" />
                   </Link>

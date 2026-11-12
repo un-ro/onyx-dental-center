@@ -60,6 +60,8 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
             <Head>
                 <link rel="alternate" hrefLang={language} href={`https://onyxdentalcenter.id/blogs/${slug}`} />
             </Head>
+            {/* per-page <html lang>; App Router can't override root layout server-side without dynamic layout */}
+            <script dangerouslySetInnerHTML={{ __html: `document.documentElement.lang=${JSON.stringify(language)}` }} />
             <JsonLd schemaType='BlogPosting' data={blog.data} />
             <PageWrapper className='bg-custom-primary'>
                 <section className="w-full flex justify-center px-4 py-8 md:py-20">

@@ -1,5 +1,6 @@
 // app/blogs/page.tsx
 import Link from 'next/link';
+import { shimmer } from '@/lib/utils';
 // import { findPublishedBlogs } from '@/lib/models';
 import Image from 'next/image';
 import { format } from 'date-fns'
@@ -75,6 +76,7 @@ export default async function BlogListPage() {
                                 height={250}
                                 sizes="(min-width:768px) 31vw, 100vw"
                                 className='w-full h-[250px] object-cover'
+                                placeholder={shimmer(400, 250)}
                                 />
                                 <div className='w-full h-full flex flex-col justify-between p-4'>
                                 <div>

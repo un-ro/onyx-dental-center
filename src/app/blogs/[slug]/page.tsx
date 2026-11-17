@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { metaData } from '@/lib/utils/metadata';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { shimmer } from '@/lib/utils';
 // import { cache } from "react";
 import BlogPostingJsonLd from '@/lib/components/JsonLd';
 import { format } from 'date-fns';
@@ -77,6 +78,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
                             height={600}
                             className='mt-8 rounded-lg w-full h-auto max-h-[70vh] object-contain'
                             priority
+                            placeholder={shimmer(800, 600)}
                         />
 
                         <TableOfContents htmlContent={blog.data.content} language={language} />

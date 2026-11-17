@@ -24,10 +24,10 @@ export async function fetcher<T>(
       }
     }
 
-    // ponytail: backend emits "api.onyxdentalcenter.id//storage/..." which Vercel's
-    // image optimizer rejects (400); normalize here until backend fixes URL join
-    const text = (await res.text()).replaceAll(
-      "api.onyxdentalcenter.id//",
+    // ponytail: backend emits "api.onyxdentalcenter.id//storage/..." (JSON-escaped as
+    // "\/\/") which Vercel's image optimizer rejects (400); collapse until backend fixes URL join
+    const text = (await res.text()).replace(
+      /api\.onyxdentalcenter\.id(?:\\?\/)+/g,
       "api.onyxdentalcenter.id/"
     );
     return JSON.parse(text);
